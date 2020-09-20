@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="714abd39-e33d-4ec0-84b7-d0166a752f7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../3_Mo_ta_thuat_toan/2_Bai_tap/3_Tim_gia_tri_lon_nhat_trong_3_so.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../3_Mo_ta_thuat_toan/2_Bai_tap/3_Tim_gia_tri_lon_nhat_trong_3_so.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CV.html" beforeDir="false" afterPath="$PROJECT_DIR$/CV.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +33,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/startbootstrap-resume-gh-pages/index.html" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -44,10 +46,23 @@
       <option name="presentableId" value="Default" />
       <updated>1600329557913</updated>
       <workItem from="1600329559167" duration="93000" />
+      <workItem from="1600331541126" duration="1047000" />
+      <workItem from="1600334856856" duration="760000" />
+      <workItem from="1600477346887" duration="6121000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="31" key="#Notifications" timestamp="1600485930895">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="31" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1600485930895" />
+    <state x="463" y="127" key="FileChooserDialogImpl" timestamp="1600334879167">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="127" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1600334879167" />
   </component>
 </project>
