@@ -7,25 +7,41 @@
             border: 10px solid lightskyblue;
             width: 450px;
         }
+        form {
+            margin-top:-20px;
+        }
+        .title {
+            padding: 1px;
+            color: white;
+            text-align: center;
+            background-color: orangered;
+            font-size: 20px;
+        }
+        p {
+            color: blue;
+        }
+        label {
+            color: orangered;
+        }
     </style>
-    <title>Form đơn giản</title>
+    <title>SimpleForm</title>
 </head>
 <body>
 <fieldset>
-    <form method="get" action="formdongian.html" style="margin-top:-20px">
-        <p style="padding:1px; color:white; text-align:center; background-color:orangered; font-size:20px";>SỞ THÍCH CỦA BẠN</p>
-        <p style="color: blue; margin-left: 40px;">Họ và tên
+    <form method="get" action="formdongian.html">
+        <p class="title">SỞ THÍCH CỦA BẠN</p>
+        <p style="margin-left: 40px;">Họ và tên
             <input type="text" name="yourName" style="width:220px;"/></p>
-        <p style="color: blue; margin-left: 64px;">Email
+        <p style="margin-left: 64px;">Email
             <input type="text" name="email"/></p>
-        <p style="color: blue; margin-left: 49px;">Sở thích
-            <label style="color:orangered;"><input name="hobby" value="sport" type="checkbox"/>Thể thao</label>
-            <label style="color:orangered; margin-left:30px"><input name="hobby" value="music" type="checkbox"/>Âm nhạc</label>
-            <label style="color:orangered; margin-left:30px"><input name="hobby" value="book" type="checkbox"/>Đọc sách</label>
+        <p style="margin-left: 49px;">Sở thích
+            <label><input name="hobby" value="sport" type="checkbox"/>Thể thao</label>
+            <label style="margin-left:30px"><input name="hobby" value="music" type="checkbox"/>Âm nhạc</label>
+            <label style="margin-left:30px"><input name="hobby" value="book" type="checkbox"/>Đọc sách</label>
             <br>
-            <label style="color:orangered; margin-left:57px"><input name="hobby" value="surfWeb" type="checkbox"/>Lướt web</label>
-            <label style="color:orangered; margin-left:25px"><input name="hobby" value="game" type="checkbox"/>Chơi game</label>
-            <label style="color:orangered; margin-left:18px"><input name="hobby" value="movie" type="checkbox"/>Điện ảnh</label>
+            <label style="margin-left:57px"><input name="hobby" value="surfWeb" type="checkbox"/>Lướt web</label>
+            <label style="margin-left:25px"><input name="hobby" value="game" type="checkbox"/>Chơi game</label>
+            <label style="margin-left:18px"><input name="hobby" value="movie" type="checkbox"/>Điện ảnh</label>
             <br>
             <label style="color:orangered; margin-left:57px"><input name="hobby" value="travel" type="checkbox"/>Du lịch</label>
         </p>
