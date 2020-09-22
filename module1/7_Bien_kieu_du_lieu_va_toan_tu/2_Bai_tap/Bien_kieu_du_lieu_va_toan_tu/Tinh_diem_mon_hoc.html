@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputVl = prompt('Nhập điểm Vật lý:');
+    let inputHh = prompt('Nhập điểm Hóa học:');
+    let inputSh = prompt('Nhập điểm Sinh học:');
+    let vl = parseInt(inputVl);
+    let hh = parseInt(inputHh);
+    let sh = parseInt(inputSh);
+    let tong = vl + hh + sh;
+    let diemTb = (vl + hh + sh)/3;
+    document.write("Tổng điểm: " + tong);
+    document.write("<br>");
+    document.write("Điểm trung bình: " + diemTb);
+</script>
+</body>
+</html>
