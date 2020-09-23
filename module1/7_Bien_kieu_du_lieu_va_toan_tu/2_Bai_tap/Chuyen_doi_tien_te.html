@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Doi tien</title>
+    <style>
+        table {
+            width: 70%;
+        }
+        th, td {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <form>
-    
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="amount"/></td>
+            <td>
+                <select id="from">
+                    <option value="Vn" selected>VND</option>
+                    <option value="Eu">EUR</option>
+                    <option value="US">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="to">
+                    <option value="Vn">VND</option>
+                    <option value="Eu">EURr</option>
+                    <option value="US" selected>USD</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" onclick="chuyenTien()" value="Convert">
+            </td>
+        </tr>
+    </table>
+<p id="result"></p>
 </form>
-<script>
-
-</script>
+<script src="Chuyen_doi_tien_te.js"></script>
 </body>
 </html>
