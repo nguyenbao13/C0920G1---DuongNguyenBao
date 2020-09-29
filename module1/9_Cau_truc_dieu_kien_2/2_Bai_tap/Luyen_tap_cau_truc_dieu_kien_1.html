@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bai 1
+    let a = prompt('Nhập a:');
+    let b = prompt('Nhập b:');
+    if (a % b == 0) {
+        alert('a chia hết cho b');
+    } else {alert('a không chia hết cho b');}
+    //Bai 2
+    let t = prompt('Nhập tuổi:');
+    if (t < 16) {
+        alert('Học sinh ' + t + ' tuổi không đủ điều kiện vào học lớp 10');
+    } else {alert('Học sinh đủ điều kiện vào học lớp 10');}
+    //Bai 3
+    let n = prompt('Nhập số nguyên:');
+    if (n > 0) {
+        alert(n + ' lớn hơn 0');
+    } else if (n < 0) {
+        alert(n + ' bé hơn 0');
+    } else {alert('Hãy nhập 1 số khác 0');}
+    //Bai 4
+    let a = prompt('Nhập a:');
+    let b = prompt('Nhập b:');
+    let c = prompt('Nhập c:');
+    let max;
+    if (a > b) {
+        if (a > c) {
+            max = a;
+        } else {max = c;}
+    } else if (b > c) {
+        max = b;
+    } else {max = c;}
+    alert('Số lớn nhất là ' + max);
+</script>
+</body>
+</html>

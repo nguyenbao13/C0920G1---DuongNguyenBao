@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = prompt('Số lượng số nguyên tố đầu tiên cần in:');
+    let count = 0;
+    let N = 2;
+    let a;
+    let b;
+    while (count < numbers) {
+        b = true;
+        for (a=2; a <= Math.sqrt(N); a++) {
+            if (N % a == 0) {
+                b=false;
+                break;
+            }
+        }
+        if (b) {
+            document.write(N);
+            document.write('<br>');
+            count++;
+        }
+        N++;
+    }
+</script>
+</body>
+</html>
