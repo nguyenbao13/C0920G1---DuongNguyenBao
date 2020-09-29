@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Chơi!" onclick="choi();">
+<script>
+    function choi() {
+        let num1 = parseInt(prompt('Nhập số đầu:'));
+        let num2 = parseInt(prompt('Nhập số cuối:'));
+        let randNum = Math.round(Math.random() * (num2 - num1) + 1) + num1;
+        document.write(randNum);
+        let guessNum = parseInt(prompt('Đoán 1 số vào đây'));
+        let count = 0;
+        while (count < 2) {
+            if (guessNum === randNum) {
+                alert('Bạn đã đoán đúng !');
+                break;
+            } else if (guessNum < randNum) {
+                alert('Số bạn đoán bé hơn');
+            } else {
+                alert('Số bạn đoán lớn hơn');
+            }
+            guessNum = parseInt(prompt('Đoán lại đi !'));
+            count++;
+        }
+    }
+</script>
+</body>
+</html>

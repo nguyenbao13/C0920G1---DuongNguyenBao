@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let i, j;
+    let count = 2;
+    i = 1;
+    j = 1;
+    document.write(i + ', ' + j + ', ');
+    let k = i + j;
+    let sum20 = 0;
+    for (count = 2; count < 20; count++ ) {
+        i = j;
+        j = k;
+        document.write(k + ', ');
+        sum20 += k;
+        k = i + j;
+    }
+    document.write('có tổng bằng ' + sum20);
+</script>
+</body>
+</html>
