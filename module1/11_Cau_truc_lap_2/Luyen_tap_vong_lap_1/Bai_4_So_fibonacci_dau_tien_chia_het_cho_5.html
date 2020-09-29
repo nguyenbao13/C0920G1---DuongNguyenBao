@@ -6,18 +6,15 @@
 </head>
 <body>
 <script>
-    let i, j;
-    let count = 2;
-    i = 1;
-    j = 1;
-    document.write(i + ', ' + j + ', ');
+    let i = 1;
+    let j = 1;
     let k = i + j;
-    for (count = 2; count < 20; count++ ) {
+    while (k % 5 != 0) {
         i = j;
         j = k;
-        document.write(k + ', ');
         k = i + j;
     }
+
 </script>
 </body>
 </html>

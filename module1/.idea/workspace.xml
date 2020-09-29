@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d0e701f8-a1af-4517-a22f-af4d812e932a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10_Cau_truc_lap_1/Su_dung_vong_lap_long_nhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_Cau_truc_lap_1/Su_dung_vong_lap_long_nhau.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10_Cau_truc_lap_1/Su_dung_vong_lap_while.html" beforeDir="false" afterPath="$PROJECT_DIR$/10_Cau_truc_lap_1/Su_dung_vong_lap_while.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_2/Yeu_cau_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yeu_cau_2/Yeu_cau_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_2/Yeu_cau_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yeu_cau_2/Yeu_cau_2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11_Cau_truc_lap_2/Hien_thi_cac_so_nguyen_to_dau_tien.html" beforeDir="false" afterPath="$PROJECT_DIR$/11_Cau_truc_lap_2/Hien_thi_cac_so_nguyen_to_dau_tien.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11_Cau_truc_lap_2/Luyen_tap_vong_lap_1/Bai_3_20_so_fibonacci_dau_tien.html" beforeDir="false" afterPath="$PROJECT_DIR$/11_Cau_truc_lap_2/Luyen_tap_vong_lap_1/Bai_3_20_so_fibonacci_dau_tien.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
       <workItem from="1601134750446" duration="2663000" />
       <workItem from="1601192309944" duration="13976000" />
       <workItem from="1601255791283" duration="15114000" />
-      <workItem from="1601343688330" duration="12969000" />
+      <workItem from="1601343688330" duration="15382000" />
     </task>
     <servers />
   </component>
