@@ -10,7 +10,7 @@
     function choi() {
         let num1 = parseInt(prompt('Nhập số đầu:'));
         let num2 = parseInt(prompt('Nhập số cuối:'));
-        let randNum = Math.round(Math.random() * (num2 - num1) + 1) + num1;
+        let randNum = Math.floor(Math.random() * (num2 - num1) + 1) + num1;
         document.write(randNum);
         let guessNum = parseInt(prompt('Đoán 1 số vào đây'));
         let count = 0;

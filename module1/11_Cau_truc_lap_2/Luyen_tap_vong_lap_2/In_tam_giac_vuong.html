@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Hinh1
+    let i;
+    let j;
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j <= i; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+    //Hinh2
+    let a;
+    let b;
+    for (a = 0; a < 5; a++) {
+        for (b = 5; b > a; b--) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+    //Hinh3
+    let c;
+    let d;
+    for (c = 0; c < 5; c++) {
+        for (d = 0; d < 5; d++) {
+            if (d < 4-c) {
+                document.write('&nbsp ');
+            } else {
+                document.write('*');
+            }
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+    //Hinh4
+    let e;
+    let f;
+    for (e = 0; e < 5; e++) {
+        for (f = 0; f < 5; f++) {
+            if (f < e) {
+                document.write('&nbsp ');
+            } else {
+                document.write('*');
+            }
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+</script>
+</body>
+</html>
