@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d0e701f8-a1af-4517-a22f-af4d812e932a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_Mang_1/Tao_ban_co_caro_don_gian.html" beforeDir="false" afterPath="$PROJECT_DIR$/12_Mang_1/Tao_ban_co_caro_don_gian.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/13_Mang_2/Su_dung_cac_ham_co_san_cua_mang/Bai_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/13_Mang_2/Su_dung_cac_ham_co_san_cua_mang/Bai_2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +69,10 @@
       <workItem from="1601395493536" duration="2634000" />
       <workItem from="1601435891906" duration="12035000" />
       <workItem from="1601476465976" duration="2494000" />
+      <workItem from="1601515427835" duration="12071000" />
+      <workItem from="1601534262699" duration="790000" />
+      <workItem from="1601565626343" duration="593000" />
+      <workItem from="1601601694093" duration="3359000" />
     </task>
     <servers />
   </component>
@@ -164,6 +168,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="186" y="15" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1601348429387" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1601608910887">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1601608910887" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601351038541">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

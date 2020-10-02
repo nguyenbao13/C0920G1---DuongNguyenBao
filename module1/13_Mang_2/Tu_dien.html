@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="search">
+<input type="button" value="Tìm kiếm" onclick="trans()">
+<script>
+    function trans() {
+        let str = document.getElementById('search').value;
+        let eng = ['pig','cow','chicken','shrimp'];
+        let viet = ['heo','bò','gà','tôm'];
+        let i;
+        let check = true;
+        for (i = 0; i < eng.length; i++) {
+                if (eng[i] === str) {
+                    alert(viet[i]);
+                    check = false;
+                    break;
+                }
+            }
+        if (check) {
+            alert('Không tìm thấy');
+        }
+    }
+
+</script>
+</body>
+</html>
