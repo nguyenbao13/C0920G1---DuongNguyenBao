@@ -6,11 +6,11 @@
 </head>
 <body>
 <script>
-    num = prompt();
+    num = parseFloat(prompt());
     nguyenDuong(num);
     function nguyenDuong(x) {
         let check;
-        if (x > 0) {
+        if (x > 0 && Number.isInteger(x)) {
             check = true;
         } else {
             check = false;
