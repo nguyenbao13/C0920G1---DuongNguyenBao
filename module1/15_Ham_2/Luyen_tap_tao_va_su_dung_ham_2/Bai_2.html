@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình Tròn</title>
+</head>
+<body>
+<script>
+    let radius = prompt('Nhập bán kính hình tròn');
+    dienTichHinhTron(radius);
+    chuViHinhTron(radius);
+    function dienTichHinhTron(r) {
+        let s = Math.PI * r * r;
+        alert('Diện tích hình tròn bán kính ' + r + ' là ' + s);
+    }
+    function chuViHinhTron(r) {
+        let c = Math.PI * r * 2;
+        alert('Chu vi hình tròn bán kính ' + r + ' là ' + c);
+    }
+</script>
+</body>
+</html>

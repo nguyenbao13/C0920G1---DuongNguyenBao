@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let star;
+    timSao(star);
+    function timSao(str) {
+        let arr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let arr2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        let check = true;
+        while (check) {
+            str = prompt('Ngôi sao bạn tìm là ?');
+            for (let i = 0; i < arr1.length; i++) {
+                if (arr1[i] === str) {
+                    alert('Chòm sao của ' + arr1[i] + ' là ' + arr2[i]);
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                alert('Không tìm thấy ngôi sao nào');
+            }
+        }
+    }
+</script>
+</body>
+</html>

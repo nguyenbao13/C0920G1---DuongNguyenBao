@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d0e701f8-a1af-4517-a22f-af4d812e932a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/13_Mang_2/Su_dung_cac_ham_co_san_cua_mang/Bai_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/13_Mang_2/Su_dung_cac_ham_co_san_cua_mang/Bai_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11_Cau_truc_lap_2/Luyen_tap_vong_lap_1/Bai_8_Game_doan_so.html" beforeDir="false" afterPath="$PROJECT_DIR$/11_Cau_truc_lap_2/Luyen_tap_vong_lap_1/Bai_8_Game_doan_so.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_2/Yeu_cau_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yeu_cau_2/Yeu_cau_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_2/Yeu_cau_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yeu_cau_2/Yeu_cau_2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/12_Mang_1/Tao_ban_co_caro_don_gian.html" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunManager">
     <configuration name="Tao_ban_co_caro_don_gian.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/module1/12_Mang_1/Tao_ban_co_caro_don_gian.html" useBuiltInWebServerPort="true">
@@ -72,7 +76,11 @@
       <workItem from="1601515427835" duration="12071000" />
       <workItem from="1601534262699" duration="790000" />
       <workItem from="1601565626343" duration="593000" />
-      <workItem from="1601601694093" duration="3359000" />
+      <workItem from="1601601694093" duration="5133000" />
+      <workItem from="1601621465352" duration="9644000" />
+      <workItem from="1601687743197" duration="8481000" />
+      <workItem from="1601782468919" duration="13678000" />
+      <workItem from="1601860553550" duration="367000" />
     </task>
     <servers />
   </component>
@@ -164,17 +172,21 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="227" key="GridCell.Tab.3.right/0.0.1366.738@0.0.1366.738" timestamp="1601460733083" />
-    <state x="186" y="15" key="SettingsEditor" timestamp="1601348429387">
+    <state x="186" y="15" key="SettingsEditor" timestamp="1601809093349">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="186" y="15" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1601348429387" />
+    <state x="186" y="15" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1601809093349" />
+    <state x="377" y="227" width="665" height="284" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1601809070577">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="377" y="227" width="665" height="284" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.738@0.0.1366.738" timestamp="1601809070577" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1601608910887">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1601608910887" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601351038541">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601803334964">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1601351038541" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1601803334964" />
   </component>
 </project>

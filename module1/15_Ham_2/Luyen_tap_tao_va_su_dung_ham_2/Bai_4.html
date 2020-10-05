@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự số</title>
+</head>
+<body>
+<script>
+    char = prompt();
+    checkNumber(char);
+    function checkNumber(x) {
+        let check;
+        if (x >= '0' && x <= '9') {
+           check = true;
+        } else {
+            check = false;
+        }
+        alert(check);
+    }
+</script>
+</body>
+</html>

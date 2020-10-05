@@ -59,30 +59,6 @@ function output() {
     document.getElementById('serviceOut').innerHTML=service.value;
     document.getElementById('roomOut').innerHTML=room.value;
 }
-function traThongTin() {
-    let tempName = document.getElementById('nameOut').textContent;
-    name.value = tempName;
-    let tempIdNum = document.getElementById('idNumOut').textContent;
-    idNum.value = tempIdNum;
-    let tempEmail = document.getElementById('emailOut').textContent;
-    email.value = tempEmail;
-    let tempBirthday = document.getElementById('birthdayOut').textContent;
-    birthday.value = tempBirthday;
-    let tempAddress = document.getElementById('addressOut').textContent;
-    address.value = tempAddress;
-    let tempCustomer = document.getElementById('customerOut').textContent;
-    customer.value = tempCustomer;
-    let tempDiscount = document.getElementById('discountOut').textContent;
-    discount.value = tempDiscount;
-    let tempAmount = document.getElementById('amountOut').textContent;
-    amount.value = tempAmount;
-    let tempRentDay = document.getElementById('rentDayOut').textContent;
-    rentDay.value = tempRentDay;
-    let tempService = document.getElementById('serviceOut').textContent;
-    service.value = tempService;
-    let tempRoom = document.getElementById('roomOut').textContent;
-    room.value = tempRoom;
-}
 function edit() {
     let choose = prompt(
         '1. Hiển thị thông tin khách hàng.' + '\n' +

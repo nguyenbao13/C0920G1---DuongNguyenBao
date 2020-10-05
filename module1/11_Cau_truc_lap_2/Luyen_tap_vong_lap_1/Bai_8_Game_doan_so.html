@@ -15,6 +15,7 @@
         let guessNum = parseInt(prompt('Đoán 1 số vào đây'));
         let count = 0;
         while (count < 2) {
+            count++;
             if (guessNum === randNum) {
                 alert('Bạn đã đoán đúng !');
                 break;
@@ -24,7 +25,6 @@
                 alert('Số bạn đoán lớn hơn');
             }
             guessNum = parseInt(prompt('Đoán lại đi !'));
-            count++;
         }
     }
 </script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    num1 = prompt('Nhập số thứ nhất');
+    num2 = prompt('Nhập số thứ hai');
+    num3 = prompt('Nhập số thứ ba');
+    baSoNguyen(num1,num2,num3);
+    function baSoNguyen(int1,int2,int3) {
+        let min;
+        if (int1 < int2) {
+            if (int1 < int3) {
+                min = int1;
+            } else {
+                min = int3;
+            }
+        } else if (int2 < int3) {
+            min = int2;
+        } else {
+            min = int3;
+        }
+        alert('Số nhỏ nhất là ' + min);
+    }
+</script>
+</body>
+</html>

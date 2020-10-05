@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi 2 số</title>
+</head>
+<body>
+<script>
+    // Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    let arr = [2];
+    for (let i = 0; i < 2; i++ ){
+        arr[i] = prompt('Nhập số');
+    }
+    doiHaiSo(arr);
+    alert(arr);
+    function doiHaiSo() {
+        let temp;
+        temp = arr[0];
+        arr[0] = arr[1] ;
+        arr[1] = temp;
+    }
+</script>
+</body>
+</html>
