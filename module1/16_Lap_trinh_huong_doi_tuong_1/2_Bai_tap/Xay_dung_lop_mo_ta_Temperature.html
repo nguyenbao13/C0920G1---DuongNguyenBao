@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(oC) {
+            this.oC = oC;
+        }
+        convertCtoF() {
+            let oF = this.oC * 1.8 + 32;
+            return oF;
+        }
+        convertCtoK() {
+            let oK = this.oC + 273;
+            return oK;
+        }
+    }
+    let Temperature1 = new Temperature(25);
+    document.write('Độ Fahrenhait: ' + Temperature1.convertCtoF() + '<br>');
+    document.write('Độ Kenvin: ' + Temperature1.convertCtoK());
+</script>
+</body>
+</html>

@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d0e701f8-a1af-4517-a22f-af4d812e932a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_Ham_2/Luyen_tap_tao_va_su_dung_ham_2/Bai_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/15_Ham_2/Luyen_tap_tao_va_su_dung_ham_2/Bai_6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_Ham_2/Luyen_tap_tao_va_su_dung_ham_2/Bai_7.html" beforeDir="false" afterPath="$PROJECT_DIR$/15_Ham_2/Luyen_tap_tao_va_su_dung_ham_2/Bai_7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_Ham_2/Luyen_tap_tao_va_su_dung_ham_2/Bai_8.html" beforeDir="false" afterPath="$PROJECT_DIR$/15_Ham_2/Luyen_tap_tao_va_su_dung_ham_2/Bai_8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +40,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/12_Mang_1/Tao_ban_co_caro_don_gian.html" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RunManager">
     <configuration name="Tao_ban_co_caro_don_gian.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/module1/12_Mang_1/Tao_ban_co_caro_don_gian.html" useBuiltInWebServerPort="true">
@@ -79,7 +75,9 @@
       <workItem from="1601621465352" duration="9644000" />
       <workItem from="1601687743197" duration="8481000" />
       <workItem from="1601782468919" duration="13678000" />
-      <workItem from="1601860553550" duration="18129000" />
+      <workItem from="1601860553550" duration="18864000" />
+      <workItem from="1601895219242" duration="671000" />
+      <workItem from="1601947465225" duration="9459000" />
     </task>
     <servers />
   </component>
@@ -171,10 +169,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="227" key="GridCell.Tab.3.right/0.0.1366.738@0.0.1366.738" timestamp="1601460733083" />
-    <state x="186" y="15" key="SettingsEditor" timestamp="1601809093349">
+    <state x="186" y="15" key="SettingsEditor" timestamp="1601895287133">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="186" y="15" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1601809093349" />
+    <state x="186" y="15" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1601895287133" />
     <state x="377" y="227" width="665" height="284" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1601809070577">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -183,9 +181,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1601608910887" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601803334964">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601959318458">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1601803334964" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1601959318458" />
   </component>
 </project>
