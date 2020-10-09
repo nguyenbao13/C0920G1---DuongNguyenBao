@@ -7,14 +7,39 @@
 <body>
 <script>
     class Mobile {
-        constructor(pin,typing,inbox,sent) {
-            this.pin = pin;
+        constructor(battery,typing,inbox,sent) {
+            this.battery = battery;
             this.typing = typing;
             this.inbox = inbox;
             this.sent = sent;
         }
+        turnOn_Off() {
+            this.status = !this.status;
+        }
+        chargeBattery() {
+            for (let i = this.battery; i <= 100; i+=0.0001) {
+                this.battery += i;
+            }
+            return this.battery;
+        }
+        setMessage(message) {
+            this.message = message;
+        }
+        getMessage() {
+            return this.message;
+        }
+        sendMessage(message,mobile) {
+            mobile.setMessage(message);
+        }
+        showInbox() {
 
+        }
     }
+    let nokia = new Mobile();
+    let iphone = new Mobile();
+    nokia.sendMessage("message from android",iphone);
+    let message = iphone.getMessage();
+    alert(message);
 </script>
 </body>
 </html>
