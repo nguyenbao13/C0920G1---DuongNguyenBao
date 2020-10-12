@@ -3,105 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <title>Furama Resort</title>
-    <style>
-        .column {
-            float: left;
-            width: 33.33%;
-            padding-left: 15px;
-        }
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        @media screen and (max-width:600px) {
-            .column {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 <body>
-<div class="row">
-    <div class="column">
-        <h2>Furama Resort</h2>
-        <form>
-            <label>Họ và tên: <input type="text" id="name"></label>
-            <br><br>
-            <label>Số CMND: <input type="number" id="idNum"/></label>
-            <br><br>
-            <label>Ngày sinh: <input type="date" id="birthday"/></label>
-            <br><br>
-            <label>Email: <input type="text" id="email"></label>
-            <br><br>
-            <label>Địa chỉ:
-                <ul>
-                    <li>Đà Nẵng (giảm 20$)</li>
-                    <li>Huế (giảm 10$)</li>
-                    <li>Quảng Nam (giảm 5$)</li>
-                </ul>
-                <input type="text" id="address"/>
-            </label>
-            <br><br>
-            <label>Loại khách:
-                <select id="customer">
-                    <option value="Diamond">Diamond (giảm 15$)</option>
-                    <option value="Platinum">Platinum (giảm 10$)</option>
-                    <option value="Gold">Gold (giảm 5$)</option>
-                    <option value="Silver">Silver (giảm 2$)</option>
-                    <option value="Member">Member</option>
-                </select>
-            </label>
-            <br><br>
-            <label>Giảm giá: <input type="number" id="discount"/></label>
-            <br><br>
-            <label>Số lượng đi kèm: <input type="number" id="amount"/></label>
-            <br><br>
-            <label>Số ngày thuê:
-                <ul>
-                    <li>Từ 8 ngày trở lên (giảm 30$)</li>
-                    <li>Từ 5-7 ngày (giảm 20$)</li>
-                    <li>Từ 2-4 ngày (giảm 10$)</li>
-                </ul>
-                <input type="number" id="rentDay"/>
-            </label>
-            <br><br>
-            <label>Loại dịch vụ:
-                <select id="service">
-                    <option value="Villa">Villa</option>
-                    <option value="House">House</option>
-                    <option value="Room">Room</option>
-                </select>
-            </label>
-            <br><br>
-            <label>Loại phòng thuê:
-                <select id="room">
-                    <option value="Vip">Vip</option>
-                    <option value="Business">Business</option>
-                    <option value="Normal">Normal</option>
-                </select>
-            </label>
-        </form>
-        <br>
-        <input type="button" value="Hoàn tất" onclick="checkValue();"/>
-    </div>
-    <div class="column">
-        <h3>Thông tin khách hàng</h3>
-        <p>Họ và tên: <span id="nameOut">Dương Bảo</span></p>
-        <p>Số CMND: <span id="idNumOut">123456789</span></p>
-        <p>Ngày sinh: <span id="birthdayOut">08/13/1996</span></p>
-        <p>Email: <span id="emailOut">bao@gmail.com</span></p>
-        <p>Địa chỉ: <span id="addressOut">Đà Nẵng</span></p>
-        <p>Loại khách: <span id="customerOut">Diamond</span></p>
-        <p>Giảm giá: <span id="discountOut">55</span>$</p>
-        <p>Số lượng đi kèm: <span id="amountOut">4</span></p>
-        <p>Số ngày thuê: <span id="rentDayOut">7</span></p>
-        <p>Loại dịch vụ: <span id="serviceOut">Villa</span></p>
-        <p>Loại phòng thuê: <span id="roomOut">Vip</span></p>
-        <p>Tổng chi phí: <span id="fee"></span>$</p>
-        <input type="button" value="Sửa" onclick="edit();">
-        <script src="Yeu_cau_3.js"></script>
-    </div>
-</div>
+<script>
+    let name;
+    let identityNumber;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let quantityIncluded;
+    let rentDays;
+    let totalPay;
+    let check = false;
+    //Định dạng tên
+    let tempName = '';
+    name = prompt('Nhập tên');
+    name = name.trim().toLowerCase();
+    for (let i = 0; i < name.length; i++) {
+        if (name.charAt(i) === ' ' && name.charAt(i + 1) === ' ') {
+            continue;
+        }
+        if (i === 0 || name.charAt(i - 1) === ' ') {
+            tempName += name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName += name.charAt(i);
+    }
+    name = tempName;
+    alert(name);
+    //Kiểm tra CMND
+    do {
+        identityNumber = prompt('Nhập số CMND');
+        if (!isNaN(identityNumber)) {
+            identityNumber = parseFloat(identityNumber);
+        }
+        if (!Number.isInteger(identityNumber)) {
+            alert('CMND không đúng định dạng');
+            continue;
+        }
+        if (identityNumber < 10000000 || identityNumber > 99999999) {
+            alert('CMND không đúng định dạng');
+            continue;
+        }
+        check = true;
+    } while (!check);
+    check = false;
+    //Kiểm tra ngày sinh
+    do {
+        birthday = prompt('Nhập ngày sinh');
+        if (birthday.charAt(2) === '/' && birthday.charAt(5) === '/') {
+            let day = birthday.substring(0,2);
+            let month = birthday.substring(3,5);
+            let year = birthday.substring(6,10);
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = parseFloat(day);
+                month = parseFloat(month);
+                year = parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day < 32 && month < 13 && year > 1950) {
+                        check = true;
+                    }
+                }
+            }
+        }
+        if (!check) {
+            alert('Ngày sinh không đúng định dạng');
+        }
+    } while (!check);
+    check = false;
+    //Kiểm tra email
+    do {
+        let countAt = 0;
+        let countDot = 0;
+        email = prompt('Nhập email');
+        for (let i = 0; i < email.length; i++) {
+            if (email.charAt(i) === '@') {
+                countAt++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) === '.') {
+                        countDot++;
+                    }
+                }
+            }
+        }
+        if (countAt !== 1 || countDot < 1) {
+            alert('Email không đúng định dạng');
+        } else {
+            check = true;
+        }
+    } while (!check);
+    check = false;
+    address = prompt('Nhập địa chỉ');
+    typeService = prompt('Nhập loại dịch vụ');
+    typeRoom = prompt('Nhập loại phòng');
+    typeCustomer = prompt('Nhập loại khách hàng');
+    discount = prompt('Nhập giảm giá');
+    //Kiểm tra số người đi kèm
+    do {
+        quantityIncluded = prompt('Nhập số người đi kèm');
+        if (!isNaN(quantityIncluded)) {
+            quantityIncluded = parseFloat(quantityIncluded);
+            if (Number.isInteger(quantityIncluded) && quantityIncluded > 0) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert('Số người đi kèm không đúng định dạng')
+        }
+    } while (!check);
+    check = false;
+    //Kiểm tra số ngày thuê
+    do {
+        rentDays = prompt('Nhập số ngày thuê');
+        if (!isNaN(rentDays)) {
+            rentDays = parseFloat(rentDays);
+            if (Number.isInteger(rentDays) && rentDays > 0) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert('Số ngày thuê không đúng định dạng')
+        }
+    } while (!check);
+    check = false;
+</script>
 </body>
 </html>

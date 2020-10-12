@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomer = [];
+    while (true) {
+        let choose = parseInt(prompt('1. Add new customers' + '\n' + '2. Delete customer'));
+        switch (choose) {
+            case 1: {
+                let number = parseInt(prompt('Enter the number of new customers'));
+                for (let i = 0; i < number; i++) {
+                    let nameCustomer = prompt('Enter the name of ' + (i + 1) + 'th customer');
+                    arrNameCustomer.push(nameCustomer);
+                }
+                arrNameCustomer.sort();
+                let result = '';
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    result += (i + 1) + '. ' + arrNameCustomer[i] + '\n';
+                }
+                alert(result);
+                break;
+            }
+            case 2: {
+                let check = false;
+                let nameCustomer = prompt('Enter the customer to delete');
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    if (arrNameCustomer[i] === nameCustomer) {
+                        arrNameCustomer.splice(i, 1);
+                        check = true;
+                    }
+                }
+                if (!check) {
+                    alert('Tên mà bạn muốn xóa không có trong mảng');
+                }
+                let result = '';
+                arrNameCustomer.sort();
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    result += (i + 1) + '. ' + arrNameCustomer[i] + '\n';
+                }
+                alert(result);
+                break;
+            }
+            default:
+                alert('Failed');
+        }
+    }
+</script>
+</body>
+</html>

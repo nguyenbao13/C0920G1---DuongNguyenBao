@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d0e701f8-a1af-4517-a22f-af4d812e932a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/16_Lap_trinh_huong_doi_tuong_1/1_Thuc_hanh/Funny_circles.html" beforeDir="false" afterPath="$PROJECT_DIR$/16_Lap_trinh_huong_doi_tuong_1/1_Thuc_hanh/Funny_circles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/16_Lap_trinh_huong_doi_tuong_1/2_Bai_tap/Xay_dung_lop_mo_ta_dien_thoai.html" beforeDir="false" afterPath="$PROJECT_DIR$/16_Lap_trinh_huong_doi_tuong_1/2_Bai_tap/Xay_dung_lop_mo_ta_dien_thoai.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/16_Lap_trinh_huong_doi_tuong_1/2_Bai_tap/Xay_dung_lop_mo_ta_hinh_chu_nhat.html" beforeDir="false" afterPath="$PROJECT_DIR$/16_Lap_trinh_huong_doi_tuong_1/2_Bai_tap/Xay_dung_lop_mo_ta_hinh_chu_nhat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Yeu_cau_3/Yeu_cau_3.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +83,9 @@
       <workItem from="1601998065862" duration="2081000" />
       <workItem from="1602033713241" duration="10668000" />
       <workItem from="1602130942846" duration="1264000" />
+      <workItem from="1602233724559" duration="787000" />
+      <workItem from="1602387709030" duration="13581000" />
+      <workItem from="1602465631913" duration="13542000" />
     </task>
     <servers />
   </component>
@@ -187,9 +189,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1601608910887" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601959318458">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1602421148617">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1601959318458" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1602421148617" />
   </component>
 </project>
