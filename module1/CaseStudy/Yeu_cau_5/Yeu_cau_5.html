@@ -55,8 +55,11 @@
         let check = parseInt(prompt('Do you want to delete customer?\n1. Yes     2.No'));
         if (check === 1) {
             arrListCustomer.splice(chooseDelete,1);
+            alert('Bạn đã xóa thành công')
+        } else {
+            alert('Cancel');
         }
-        arrListCustomer.splice(chooseDelete,1);
+        displayMainMenu();
     }
     function editCustomer() {
         let temp = '';
@@ -77,37 +80,37 @@
             '11. Loại phòng: ' + arrListCustomer[chooseDisplay][10] + '\n');
         switch (chooseEdit) {
             case '1':
-                name = prompt('Tên:');
+                arrListCustomer[chooseDisplay][0] = prompt('Tên:');
                 break;
             case '2':
-                identityNumber = prompt('Số CMND:');
+                arrListCustomer[chooseDisplay][1] = prompt('Số CMND:');
                 break;
             case '3':
-                birthday = prompt('Ngày sinh:');
+                arrListCustomer[chooseDisplay][2] = prompt('Ngày sinh:');
                 break;
             case '4':
-                email = prompt('Email:');
+                arrListCustomer[chooseDisplay][3] = prompt('Email:');
                 break;
             case '5':
-                address = prompt('Địa chỉ:');
+                arrListCustomer[chooseDisplay][4] = prompt('Địa chỉ:');
                 break;
             case '6':
-                typeCustomer = prompt('Loại khách:');
+                arrListCustomer[chooseDisplay][5] = prompt('Loại khách:');
                 break;
             case '7':
-                discount = prompt('Giảm giá:');
+                arrListCustomer[chooseDisplay][6] = prompt('Giảm giá:');
                 break;
             case '8':
-                quantityIncluded = prompt('Số lượng đi kèm:');
+                arrListCustomer[chooseDisplay][7] = prompt('Số lượng đi kèm:');
                 break;
             case '9':
-                rentDays = prompt('Số ngày thuê:');
+                arrListCustomer[chooseDisplay][8] = prompt('Số ngày thuê:');
                 break;
             case '10':
-                typeService = prompt('Loại dịch vụ:');
+                arrListCustomer[chooseDisplay][9] = prompt('Loại dịch vụ:');
                 break;
             case '11':
-                typeRoom = prompt('Loại phòng');
+                arrListCustomer[chooseDisplay][10] = prompt('Loại phòng');
                 break;
             default: alert('Failed!');
         }
