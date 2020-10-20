@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class KhachHang {
+        constructor(maKhachHang, tenKhachHang, soDienThoai, diaChi, email) {
+            this.maKhachHang = maKhachHang;
+            this.tenKhachHang = tenKhachHang;
+            this.soDienThoai = soDienThoai;
+            this.diaChi = diaChi;
+            this.email = email;
+        }
+        setMaKhachHang(maKhachHang) {
+            this.maKhachHang = maKhachHang;
+        }
+        setTenKhachHang(tenKhachHang) {
+            this.tenKhachHang = tenKhachHang;
+        }
+        setSoDienThoai(soDienThoai) {
+            this.soDienThoai = soDienThoai;
+        }
+        setDiaChi(diaChi) {
+            this.diaChi = diaChi;
+        }
+        setEmail(email) {
+            this.email = email;
+        }
+        getMaKhachHang() {
+            return this.maKhachHang;
+        }
+        getTenKhachHang() {
+            return this.tenKhachHang;
+        }
+        getSoDienThoai() {
+            return this.soDienThoai;
+        }
+        getDiaChi() {
+            return this.diaChi;
+        }
+        getEmail() {
+            return this.email;
+        }
+    }
+    // let arr = [];
+    // let khach1 = new KhachHang(1, 'Bao', '0123456789', '2ndt', 'bao@gmail.com');
+    // alert(khach1.getMaKhachHang() + '. ' + khach1.getTenKhachHang());
+    let danhsachKH = [];
+    function hienThiTrinhDon() {
+        let choose = parseInt(prompt("1. Thêm mới khách hàng."
+            + "\n2. Hiển thị danh sách khách hàng."
+            + "\n3. Tìm kiếm khách hàng."));
+        switch (choose) {
+            case 1:{
+                themMoiKH();
+                break;
+            }
+            case 2:{
+                hienThiKH();
+                break;
+            }
+            case 3:{
+                timKiemKH();
+                break;
+            }
+            default:{
+                alert("Không có mục này");
+                hienThiTrinhDon();
+                break;
+            }
+        }
+    }
+    function hienThiKH() {
+        let temp = "";
+        for (let i = 0; i < danhsachKH.length; i++){
+            temp += (i+1) + ". Name: " + danhsachKH[i].tenKhachHang + "\n";
+        }
+        temp += "Chọn một số";
+        let chooseDisplay = parseInt(prompt(temp));
+        chooseDisplay = chooseDisplay - 1;
+        if (chooseDisplay >= 0 && chooseDisplay < listCustomer.length) {
+            alert("Mã KH: " + danhsachKH[chooseDisplay].getMaKhachHang()
+                + "\nTên: " + danhsachKH[chooseDisplay].getTenKhachHang()
+                + "\nSố điện thoại: " + danhsachKH[chooseDisplay].getSoDienThoai()
+                + "\nEmail: " + danhsachKH[chooseDisplay].getEmail()
+                + "\nĐịa chỉ: " + danhsachKH[chooseDisplay].getDiaChi());
+            hienThiTrinhDon();
+        }else {
+            alert("Không có mục này");
+            hienThiTrinhDon();
+        }
+    }
+    function themMoiKH() {
+        let khachHang = new KhachHang();
+        let ma = prompt("Nhập mã: ");
+        let ten = prompt("Nhập tên: ");
+        let sdt = prompt("Nhập số điện thoại: ");
+        let email = prompt("Nhập email: ");
+        let diaChi = prompt("Nhập địa chỉ: ");
+        khachHang.maKhachHang = ma;
+        khachHang.tenKhachHang = ten;
+        khachHang.soDienThoai = sdt;
+        khachHang.email = email;
+        khachHang.diaChi = diaChi;
+        danhsachKH.push(khachHang);
+        alert("Đã thêm khách hàng");
+        hienThiTrinhDon();
+    }
+    hienThiTrinhDon();
+</script>
+</body>
+</html>

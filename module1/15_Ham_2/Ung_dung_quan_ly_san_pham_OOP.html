@@ -78,12 +78,12 @@
         document.getElementById("display").innerHTML = temp;
     }
     function editProduct(index) {
-        let temp = "<h1>Edit Product</h1>"
-        temp += "<input type='text' class='form-control' disabled value='" + productList[index].getId() + "'></br>"
-            + "<input type='text' id='nameEdit' class='form-control' value='" + productList[index].getName() + "'></br>"
-            + "<input type='text' id='priceEdit' class='form-control' value='" + productList[index].getPrice() + "'></br>"
-            + "<input type='text' id='amountEdit' class='form-control'  value='" + productList[index].getAmount() + "'></br>"
-            + "<input type='button' class='btn btn-success' value='Edit' onclick='edit(" + index + ")'></br>";
+        let temp = "<h1>Edit Product</h1>";
+        temp += "<input type='text' class='form-control' disabled value='" + productList[index].getId() + "'><br>"
+            + "<input type='text' id='nameEdit' class='form-control' value='" + productList[index].getName() + "'><br>"
+            + "<input type='text' id='priceEdit' class='form-control' value='" + productList[index].getPrice() + "'><br>"
+            + "<input type='text' id='amountEdit' class='form-control'  value='" + productList[index].getAmount() + "'><br>"
+            + "<input type='button' class='btn btn-success' value='Edit' onclick='edit(" + index + ")'><br>";
         document.getElementById("edit").innerHTML = temp;
     }
     function edit(index) {
@@ -100,7 +100,7 @@
         }
     }
     function createProduct(index) {
-        let temp = "<h1>Create Product</h1>"
+        let temp = "<h1>Create Product</h1>";
         temp += "Id: <input type='text' id='idProduct' class='form-control'></br>"
             + "Name: <input type='text' id='nameEdit' class='form-control'></br>"
             + "Price: <input type='text' id='priceEdit' class='form-control'></br>"

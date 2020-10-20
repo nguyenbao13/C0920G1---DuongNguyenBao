@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class PhanSo {
+        constructor(tu, mau) {
+            this.tu = tu;
+            this.mau = mau;
+        }
+        checkPhanSo() {
+            if (this.mau === 0) {
+                alert('Mau so phai khac 0');
+                this.tu = '';
+                this.mau = '';
+            }
+        }
+        inPhanSo() {
+            console.log(this.tu + '/' + this.mau);
+        }
+        rutGonPhanSo() {
+            let a = Math.abs(this.tu);
+            let b = Math.abs(this.mau);
+            while (a !== b) {
+                if (a > b) {
+                    a = a - b;
+                } else {
+                    b = b - a;
+                }
+            }
+            this.tu = this.tu / a;
+            this.mau = this.mau / a;
+        }
+        congPhanSo(b) {
+            this.tu = this.tu * b.mau + this.mau * b.tu;
+            this.mau = this.mau * b.mau;
+            this.rutGonPhanSo();
+            return this;
+        }
+        truPhanSo(b) {
+            this.tu = this.tu * b.mau - this.mau * b.tu;
+            this.mau = this.mau * b.mau;
+            this.rutGonPhanSo();
+            return this;
+        }
+        nhanPhanSo(b) {
+            this.tu = this.tu * b.tu;
+            this.mau = this.mau * b.mau;
+            this.rutGonPhanSo();
+            return this;
+        }
+        chiaPhanSo(b) {
+            this.tu = this.tu * b.mau;
+            this.mau = this.mau * b.tu;
+            this.rutGonPhanSo();
+            return this;
+        }
+    }
+    let phanSo_a = new PhanSo(6,4);
+    let phanSo_b = new PhanSo(5,25);
+    phanSo_a.checkPhanSo();
+    phanSo_a.rutGonPhanSo();
+    phanSo_a.inPhanSo();
+    phanSo_b.checkPhanSo();
+    phanSo_b.rutGonPhanSo();
+    phanSo_b.inPhanSo();
+    let cong = phanSo_a.congPhanSo(phanSo_b);
+    cong.inPhanSo();
+    let tru = phanSo_a.truPhanSo(phanSo_b);
+    tru.inPhanSo();
+    let nhan = phanSo_a.nhanPhanSo(phanSo_b);
+    nhan.inPhanSo();
+    let chia = phanSo_a.chiaPhanSo(phanSo_b);
+    chia.inPhanSo();
+</script>
+</body>
+</html>
