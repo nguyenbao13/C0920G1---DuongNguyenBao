@@ -5,9 +5,9 @@ public class CanNang {
         Scanner scanner = new Scanner(System.in);
         double weight, height, bmi;
         System.out.print("Your weight (in kilogram):");
-        weight = scanner.nextDouble();
+        weight = Double.valueOf(scanner.nextLine());
         System.out.print("Your height (in meter):");
-        height = scanner.nextDouble();
+        height = Double.valueOf(scanner.nextLine());
         bmi = weight / Math.pow(height, 2);
         System.out.printf("%-20s%s", "bmi", "Interpretation\n");
         if (bmi < 18)
