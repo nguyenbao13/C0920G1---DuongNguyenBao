@@ -21,7 +21,58 @@ public class PrintShape {
                     }
                     break;
                 case 2:
-
+                    for (int i = 0; i < 5; i++) { //tam giác vuông góc trái dưới
+                        for (int j = 0; j <= i; j++) {
+                            System.out.print('*');
+                        }
+                        System.out.print('\n');
+                    }
+                    System.out.print('\n');
+                    for (int i = 0; i < 5; i++) { //tam giác vuông góc trái trên
+                        for (int j = 5; j > i; j--) {
+                            System.out.print('*');
+                        }
+                        System.out.print('\n');
+                    }
+                    System.out.print('\n');
+                    for (int i = 0; i < 5; i++) { //tam giác vuông góc phải dưới
+                        for (int j = 0; j < 5; j++) {
+                            if (j < 4-i) {
+                                System.out.print(' ');
+                            } else {
+                                System.out.print('*');
+                            }
+                        }
+                        System.out.print('\n');
+                    }
+                    System.out.print('\n');
+                    for (int i = 0; i < 5; i++) { //tam giác vuông góc phải trên
+                        for (int j = 0; j < 5; j++) {
+                            if (j < i) {
+                                System.out.print(' ');
+                            } else {
+                                System.out.print('*');
+                            }
+                        }
+                        System.out.print('\n');
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < 4; i++) {
+                        for (int j = 0; j < 7; j++) {
+                            if (7/2 - i <= j && 7/2 + i >= j) {
+                                System.out.print('*');
+                            } else {
+                                System.out.print(' ');
+                            }
+                        }
+                        System.out.print('\n');
+                    }
+                    break;
+                case 4:
+                    System.exit(0);
+                default:
+                    System.out.print("No choice!");
             }
         }
     }
