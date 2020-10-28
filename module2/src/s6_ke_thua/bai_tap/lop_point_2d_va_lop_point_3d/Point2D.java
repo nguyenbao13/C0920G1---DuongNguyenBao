@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Point2D {
     private float x = 0.0f;
     private float y = 0.0f;
-    float[] arr = new float[2];
 
     public Point2D() {
     }
@@ -30,6 +29,7 @@ public class Point2D {
         setY(y);
     }
     public float[] getXY() {
+        float[] arr = new float[2];
         arr[0] = getX();
         arr[1] = getY();
         return arr;

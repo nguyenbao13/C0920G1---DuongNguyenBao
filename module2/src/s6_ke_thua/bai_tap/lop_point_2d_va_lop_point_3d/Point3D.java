@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Point3D extends Point2D {
     private float z = 0.0f;
-    private float[] arr = new float[3];
 
     public Point3D() {
     }
@@ -25,6 +24,7 @@ public class Point3D extends Point2D {
         setZ(z);
     }
     public float[] getXYZ() {
+        float[] arr = new float[3];
         arr[0] = getX();
         arr[1] = getY();
         arr[2] = getZ();
