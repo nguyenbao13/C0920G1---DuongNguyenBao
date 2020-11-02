@@ -4,7 +4,6 @@ public class Circle extends Shape {
     private double radius;
 
     public Circle() {
-        this.radius = 1.0;
     }
 
     public Circle(double radius) {
@@ -24,11 +23,11 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    public double Area() {
+    public double getArea() {
         return Math.PI * radius * radius;
     }
 
-    public double Perimeter() {
+    public double getPerimeter() {
         return 2 * radius * Math.PI;
     }
 
@@ -41,8 +40,7 @@ public class Circle extends Shape {
     }
 
     @Override
-    public double resize(double percent) {
-        setRadius(this.radius* ((100+Math.random()*percent)/100));
-        return 0;
+    public void resize(double percent) {
+        setRadius(this.radius * ((100 + Math.random() * percent) / 100));
     }
 }

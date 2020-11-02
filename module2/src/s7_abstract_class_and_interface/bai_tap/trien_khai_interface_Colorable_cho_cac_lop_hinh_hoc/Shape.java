@@ -5,8 +5,6 @@ public class Shape implements Colorable {
     private boolean filled;
 
     public Shape() {
-        this.color = "green";
-        this.filled = true;
     }
 
     public Shape(String color, boolean filled) {
@@ -45,6 +43,5 @@ public class Shape implements Colorable {
 
     @Override
     public void howToColor() {
-
     }
 }

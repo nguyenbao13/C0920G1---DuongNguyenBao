@@ -5,8 +5,6 @@ public class Shape implements Resizeable {
     private boolean filled;
 
     public Shape() {
-        this.color = "green";
-        this.filled = true;
     }
 
     public Shape(String color, boolean filled) {
@@ -44,7 +42,6 @@ public class Shape implements Resizeable {
     }
 
     @Override
-    public double resize(double percent) {
-        return 0;
+    public void resize(double percent) {
     }
 }

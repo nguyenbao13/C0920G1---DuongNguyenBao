@@ -5,8 +5,6 @@ public class Rectangle extends Shape {
     private double length;
 
     public Rectangle() {
-        width = 1.0;
-        length = 1.0;
     }
 
     public Rectangle(double width, double length) {
@@ -53,10 +51,9 @@ public class Rectangle extends Shape {
                 '}'+"\n";
     }
     @Override
-    public double resize(double percent) {
-        setWidth(this.width* ((100+Math.random()*percent)/100));
-        setLength(this.length* ((100+Math.random()*percent)/100));
-        return 0;
+    public void resize(double percent) {
+        setWidth(this.width * ((100 + Math.random() * percent) / 100));
+        setLength(this.length * ((100 + Math.random() * percent) / 100));
     }
 
 }

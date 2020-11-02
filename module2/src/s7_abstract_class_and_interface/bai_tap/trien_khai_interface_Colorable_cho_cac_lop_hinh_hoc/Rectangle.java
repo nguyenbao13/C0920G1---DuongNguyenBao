@@ -5,8 +5,6 @@ public class Rectangle extends Shape {
     private double length;
 
     public Rectangle() {
-        width = 1.0;
-        length = 1.0;
     }
 
     public Rectangle(double width, double length) {
@@ -46,7 +44,6 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return "Rectangle has area is: " +
-                getArea();
+        return "Rectangle has area is: " + getArea();
     }
 }

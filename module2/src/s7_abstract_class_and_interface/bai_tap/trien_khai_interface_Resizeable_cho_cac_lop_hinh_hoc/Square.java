@@ -28,9 +28,8 @@ public class Square extends Rectangle {
                 ", which is a subclass of " + super.toString() +
                 '}'+"\n";
     }
-
-    public double resize(double percent) {
-        setSide( getSide()* ((100+Math.random()*percent)/100));
-        return 0;
+    @Override
+    public void resize(double percent) {
+        setSide( getSide() * ((100 + Math.random() * percent) / 100));
     }
 }
