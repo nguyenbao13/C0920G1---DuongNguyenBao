@@ -63,6 +63,7 @@ public class ManagerProductLinkedList extends Product {
     }
     public static void searchProduct() {
         boolean check = false;
+        System.out.println("Enter product to search:");
         String str = sc.nextLine();
         for(Product p : list) {
             if(str.equals(p.getName())) {
@@ -77,6 +78,7 @@ public class ManagerProductLinkedList extends Product {
     }
     public static void removeProduct() {
         boolean check = false;
+        System.out.println("Enter ID of product to remove:");
         int idRemove = Integer.parseInt(sc.nextLine());
         for(Product p : list) {
             if(idRemove == p.getId()) {
