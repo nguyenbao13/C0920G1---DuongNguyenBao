@@ -1,4 +1,4 @@
-package case_study_furamaresort.models;
+package case_study_furama_resort.models;
 
 public abstract class Services {
     //Tên dịch vụ, Diện tích sử dụng, Chi phí thuê, Số lượng người tối đa,
@@ -67,6 +67,16 @@ public abstract class Services {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "nameService='" + nameService + '\'' +
+                ", usingArea=" + usingArea +
+                ", rentCost=" + rentCost +
+                ", amountMax=" + amountMax +
+                ", rentType='" + rentType + '\'' +
+                ", id='" + id + '\'';
     }
 
     public abstract void showInfor();

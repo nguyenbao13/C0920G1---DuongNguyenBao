@@ -1,4 +1,4 @@
-package case_study_furamaresort.models;
+package case_study_furama_resort.models;
 
 public class Room extends Services {
     //Dịch vụ miễn phí đi kèm.
@@ -23,15 +23,15 @@ public class Room extends Services {
     }
 
     @Override
+    public String toString() {
+        return "Room{" +
+                "freeService='" + freeService + '\'' +
+                super.toString() +
+                '}';
+    }
+
+    @Override
     public void showInfor() {
-        System.out.println("Room{" +
-                "freeService='" + freeService + '\'' + '\n' +
-                ", nameService='" + nameService + '\'' + '\n' +
-                ", usingArea=" + usingArea + '\n' +
-                ", rentCost=" + rentCost + '\n' +
-                ", amountMax=" + amountMax + '\n' +
-                ", rentType='" + rentType + '\'' + '\n' +
-                ", id='" + id + '\'' +
-                '}');
+        System.out.println(this.toString());
     }
 }

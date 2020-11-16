@@ -1,0 +1,4 @@
+Villa{roomStandard='vip', otherUtility='pool', poolArea=30.0, floors=3, nameService='villa', usingArea=30.0, rentCost=4.0, amountMax=5, rentType='3', id='1'}
+Villa{roomStandard='abc', otherUtility='haha', poolArea=20.0, floors=4, nameService='vip', usingArea=30.0, rentCost=5.0, amountMax=2, rentType='6', id='1'}
+Villa{roomStandard='abc', otherUtility='bca', poolArea=30.0, floors=2, nameService='vipro', usingArea=40.0, rentCost=4.0, amountMax=6, rentType='4', id='3'}
+Villa{roomStandard='null', otherUtility='null', poolArea=0.0, floors=0Services{nameService='null', usingArea=0.0, rentCost=0.0, amountMax=0, rentType='null', id='null'}}
