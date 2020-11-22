@@ -1,35 +1,42 @@
-import java.util.regex.Matcher;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class Demo {
     public static void main(String args[]) {
-        String text1 = "Hello java regex 2-12-2018, hello world 12/12/2018";
-
-        Pattern pattern = Pattern.compile("\\d{1,2}[-|/]\\d{1,2}[-|/]\\d{4}");
-
-        Matcher matcher = pattern.matcher(text1);
-
-        System.out.println("Ngày tháng trong chuỗi text1: " + text1);
-
-        while (matcher.find()) {
-
-            System.out.println(text1.substring(matcher.start(), matcher.end()));
-
-        }
-
-
-        String text2 = "2/12/2018";
-
-        String text3 = "12/12/aaaa";
-
-        pattern = Pattern.compile("^\\d{1,2}[-|/]\\d{1,2}[-|/]\\d{4}$");
-
-        System.out.println("\nChuỗi " + text2 + " có định dạng ngày tháng: "
-
-                + pattern.matcher(text2).matches());
-
-        System.out.println("Chuỗi " + text3 + " có định dạng ngày tháng: "
-
-                + pattern.matcher(text3).matches());
+        //isCheckBirthday("13/08/2019");
     }
+//    public static String isCheckBirthday(String birthday){
+//        Scanner scanner = new Scanner(System.in);
+//        final String REGEX_BIRTH = "(^(((0[1-9]|1[0-9]|2[0-8])[\\/](0[1-9]|1[012]))|((29|30|31)[\\/](0[13578]|1[02]))|((29|30)[\\/](0[4,6,9]|11)))[\\/](19|[2-9][0-9])\\d\\d$)|(^29[\\/]02[\\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)";
+//        while (true) {
+//            if (Pattern.matches(REGEX_BIRTH, birthday)) {
+//                long currentTime = System.currentTimeMillis();
+//                Date date = null;
+//                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+//                try {
+//                    date = simpleDateFormat.parse(birthday);
+//
+//                } catch (ParseException e) {
+//                    e.printStackTrace();
+//                }
+//                assert date != null;
+//                long millisecondsBirth =  date.getTime();
+//                long millisecondsAge = currentTime - millisecondsBirth;
+//                long rateMilliToYear = 60*60*24*365;
+//                long age = millisecondsAge / (rateMilliToYear * 1000);//????????? đéo hiểu kiểu gì vcl
+//                if (age >= 18){
+//                    return birthday;
+//                }
+//                else {
+//                    System.out.println("Nhap khong du 18 tuoi, hay nhap lai");
+//                    birthday = scanner.nextLine();
+//                }
+//            } else {
+//                System.out.println("Nhap khong dung dinh dang, hay nhap lai");
+//                birthday = scanner.nextLine();
+//            }
+//        }
+//    }
 }

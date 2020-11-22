@@ -1,8 +1,8 @@
-package case_study_furama_resort.commons;
+package case_study_furama_resort.libs;
 
 public class GenderException extends Exception {
     public GenderException() {
-        super("Không thuộc các loại giới tính.");
+        super("Not a kind of gender.");
     }
 
     public GenderException(String message) {

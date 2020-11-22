@@ -1,14 +1,17 @@
 package case_study_furama_resort.controllers;
 
-import case_study_furama_resort.commons.FileUtils;
-import case_study_furama_resort.commons.Validate;
-import case_study_furama_resort.models.House;
-import case_study_furama_resort.models.Room;
-import case_study_furama_resort.models.Services;
-import case_study_furama_resort.models.Villa;
+import case_study_furama_resort.commons.*;
+import case_study_furama_resort.libs.*;
+import case_study_furama_resort.models.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+
+import static case_study_furama_resort.commons.FileUtils.readFile;
+import static case_study_furama_resort.commons.FileUtils.writeFile;
+import static case_study_furama_resort.commons.Validate.*;
 
 public class MainController {
 
@@ -34,10 +37,10 @@ public class MainController {
                 break;
                 case 2: showServices();
                 break;
-//            case 3: addNewCustomer();
-//                    break;
-//            case 4: showInformationOfCustomer();
-//                    break;
+                case 3: addNewCustomer();
+                break;
+                case 4: showInformationCustomer();
+                break;
 //            case 5: addNewBooking();
 //                    break;
 //            case 6: showInformationOfEmployee();
@@ -74,14 +77,14 @@ public class MainController {
     public static Services addNewService(Services services) {
         System.out.println("Enter service's name:");
         services.setNameService(scanner.nextLine());
-        while (!Validate.serviceNameCheck(services.getNameService())) {
+        while (!serviceNameCheck(services.getNameService())) {
             System.out.println("Not a name (Only first letter must be uppercase)! Re-enter please:");
             services.setNameService(scanner.nextLine());
         }
 
         System.out.println("Enter using area:");
         String area = scanner.nextLine();
-        while (!Validate.areaCheck(area)) {
+        while (!areaCheck(area)) {
             System.out.println("Area must be a number & over 30m2! Re-enter please:");
             area = scanner.nextLine();
         }
@@ -89,7 +92,7 @@ public class MainController {
 
         System.out.println("Enter cost of rent:");
         String rentCost = scanner.nextLine();
-        while (!Validate.rentCostCheck(rentCost)) {
+        while (!rentCostCheck(rentCost)) {
             System.out.println("Cost of rent must be a number & over Zero! Re-enter please:");
             rentCost = scanner.nextLine();
         }
@@ -97,7 +100,7 @@ public class MainController {
 
         System.out.println("Enter max amount of people:");
         String amountMax = scanner.nextLine();
-        while (!Validate.amountMaxCheck(amountMax)) {
+        while (!amountMaxCheck(amountMax)) {
             System.out.println("Max amount of people must be a number & in range (0,20)! Re-enter please:");
             amountMax = scanner.nextLine();
         }
@@ -105,7 +108,7 @@ public class MainController {
 
         System.out.println("Enter type of rent: ");
         services.setRentType(scanner.nextLine());
-        while (!Validate.serviceNameCheck(services.getRentType())) {
+        while (!serviceNameCheck(services.getRentType())) {
             System.out.println("Not type of rent (Only first letter must be uppercase)! Re-enter please:");
             services.setRentType(scanner.nextLine());
         }
@@ -118,14 +121,14 @@ public class MainController {
         //ID, Tiêu chuẩn phòng, Mô tả tiện nghi khác, Diện tích hồ bơi, Số tầng.
         System.out.println("Enter ID: ");
         villa.setId(scanner.nextLine());
-        while (!Validate.idVillaCheck(villa.getId())) {
+        while (!idVillaCheck(villa.getId())) {
             System.out.println("Not id of villa! Re-enter please: ");
             villa.setId(scanner.nextLine());
         }
 
         System.out.println("Enter standard of room: ");
         villa.setRoomStandard(scanner.nextLine());
-        while (!Validate.serviceNameCheck(villa.getRoomStandard())) {
+        while (!serviceNameCheck(villa.getRoomStandard())) {
             System.out.println("Not standard of room! Re-enter please: ");
             villa.setRoomStandard(scanner.nextLine());
         }
@@ -135,7 +138,7 @@ public class MainController {
 
         System.out.println("Enter area of pool: ");
         String poolArea = scanner.nextLine();
-        while (!Validate.areaCheck(poolArea)) {
+        while (!areaCheck(poolArea)) {
             System.out.println("Area of pool must be a number & over 30m2! Re-enter please: ");
             poolArea = scanner.nextLine();
         }
@@ -143,13 +146,13 @@ public class MainController {
 
         System.out.println("Enter number of floors: ");
         String floors = scanner.nextLine();
-        while (!Validate.floorsCheck(floors)) {
+        while (!floorsCheck(floors)) {
             System.out.println("Not a number of floors! Re-enter please: ");
             floors = scanner.nextLine();
         }
         villa.setFloors(Integer.parseInt(floors));
 
-        FileUtils.writeFile("src/case_study_furama_resort/data/Villa", villa.toString());
+        writeFile("src/case_study_furama_resort/data/Villa", villa.toString());
         System.out.println("Added new villa successfully!");
     }
     public static void addNewHouse() {
@@ -158,14 +161,14 @@ public class MainController {
         //ID, Tiêu chuẩn phòng, Mô tả tiện nghi khác, Số tầng.
         System.out.println("Enter ID: ");
         house.setId(scanner.nextLine());
-        while (!Validate.idHouseCheck(house.getId())) {
+        while (!idHouseCheck(house.getId())) {
             System.out.println("Not id of house! Re-enter please: ");
             house.setId(scanner.nextLine());
         }
 
         System.out.println("Enter standard of room: ");
         house.setRoomStandard(scanner.nextLine());
-        while (!Validate.serviceNameCheck(house.getRoomStandard())) {
+        while (!serviceNameCheck(house.getRoomStandard())) {
             System.out.println("Wrong standard of room! Re-enter please: ");
             house.setRoomStandard(scanner.nextLine());
         }
@@ -175,13 +178,13 @@ public class MainController {
 
         System.out.println("Enter number of floor: ");
         String floors = scanner.nextLine();
-        while (!Validate.floorsCheck(floors)) {
+        while (!floorsCheck(floors)) {
             System.out.println("Not a number of floor! Re-enter please: ");
             floors = scanner.nextLine();
         }
         house.setFloors(Integer.parseInt(floors));
 
-        FileUtils.writeFile("src/case_study_furama_resort/data/House", house.toString());
+        writeFile("src/case_study_furama_resort/data/House", house.toString());
         System.out.println("Added new house successfully!");
     }
     public static void addNewRoom() {
@@ -190,21 +193,22 @@ public class MainController {
         //ID, Dịch vụ miễn phí đi kèm.
         System.out.println("Enter ID: ");
         room.setId(scanner.nextLine());
-        while (!Validate.idRoomCheck(room.getId())) {
+        while (!idRoomCheck(room.getId())) {
             System.out.println("Not id of room! Re-enter please: ");
             room.setId(scanner.nextLine());
         }
 
         System.out.println("Enter free service: ");
         room.setFreeService(scanner.nextLine());
-        while (!Validate.freeServiceCheck(room.getFreeService())) {
+        while (!freeServiceCheck(room.getFreeService())) {
             System.out.println("Not free service! Re-enter please: ");
             room.setFreeService(scanner.nextLine());
         }
 
-        FileUtils.writeFile("src/case_study_furama_resort/data/Room", room.toString());
+        writeFile("src/case_study_furama_resort/data/Room", room.toString());
         System.out.println("Added new room successfully!");
     }
+
     public static void showServices() {
         boolean notExit = true;
         while (notExit) {
@@ -222,19 +226,19 @@ public class MainController {
                 case 1:
 //                    List<Villa> villaList = FileUtils.readFileVilla("src/case_study_furama_resort/data/Villa");
 //                    for(Villa villa : villaList) {System.out.println(villa);}
-                    List<String> villaList = FileUtils.readFile("src/case_study_furama_resort/data/Villa");
+                    List<String> villaList = readFile("src/case_study_furama_resort/data/Villa");
                     for(String villa : villaList) {
                         System.out.println(villa);
                     }
                 break;
                 case 2:
-                    List<String> houseList = FileUtils.readFile("src/case_study_furama_resort/data/House");
+                    List<String> houseList = readFile("src/case_study_furama_resort/data/House");
                     for(String house : houseList) {
                         System.out.println(house);
                     }
                 break;
                 case 3:
-                    List<String> roomList = FileUtils.readFile("src/case_study_furama_resort/data/Room");
+                    List<String> roomList = readFile("src/case_study_furama_resort/data/Room");
                     for(String room : roomList) {
                         System.out.println(room);
                     }
@@ -247,6 +251,112 @@ public class MainController {
                 case 8: System.exit(0);
                 break;
             }
+        }
+    }
+
+    public static void addNewCustomer() {
+        //Họ tên , Ngày sinh, Giới tính, Số CMND,
+        // Số ĐT, Email, Loại khách, Địa chỉ
+        Customer customer = new Customer();
+        boolean check = false;
+        while (!check) {
+            try {
+                System.out.println("Enter customer's full name:");
+                String nameCustomer = scanner.nextLine();
+                nameCustomerCheck(nameCustomer);
+                check = true;
+                customer.setNameCustomer(nameCustomer);
+            } catch (NameException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        check = false;
+
+        while (!check) {
+            try {
+                System.out.println("Enter customer's birthday:");
+                String birthday = scanner.nextLine();
+                birthdayCheck(birthday);
+                check = true;
+                customer.setBirthday(birthday);
+            } catch (BirthdayException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        check = false;
+
+        while (!check) {
+            try {
+                System.out.println("Enter customer's gender:");
+                String temp = scanner.nextLine();
+                genderCheck(temp);
+                check = true;
+                String gender = "";
+                for(int i = 0; i < temp.length(); i++) {
+                    if(i == 0) {
+                        gender += temp.toUpperCase().charAt(i);
+                    } else {
+                        gender += temp.toLowerCase().charAt(i);
+                    }
+                }
+                customer.setGender(gender);
+            } catch (GenderException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        check = false;
+
+        while (!check) {
+            try {
+                System.out.println("Enter customer's id card number:");
+                String idNumber = scanner.nextLine();
+                idCardNumberCheck(idNumber);
+                check = true;
+                customer.setIdCardNumber(idNumber);
+            } catch (IdCardException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        check = false;
+
+        System.out.println("Enter customer's phone number:");
+        customer.setPhoneNumber(scanner.nextLine());
+
+        while (!check) {
+            try {
+                System.out.println("Enter customer's email:");
+                String email = scanner.nextLine();
+                emailCheck(email);
+                check = true;
+                customer.setEmail(email);
+            } catch (EmailException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        check = false;
+
+        System.out.println("Enter type of customer:");
+        customer.setTypeOfCustomer(scanner.nextLine());
+
+        System.out.println("Enter customer's address:");
+        customer.setAddress(scanner.nextLine());
+        writeFile("src/case_study_furama_resort/data/Customer", customer.toString());
+        System.out.println("Added new customer successfully!");
+    }
+    public static void showInformationCustomer() {
+        List<String> list = readFile("src/case_study_furama_resort/data/Customer");
+        String[] strings;
+        Customer customer;
+        List<Customer> customerList = new ArrayList<>();
+        for(String line : list) {
+            strings = line.split(", ");
+            customer = new Customer(strings[0], strings[1], strings[2], strings[3],
+                    strings[4], strings[5], strings[6], strings[7], null);
+            customerList.add(customer);
+        }
+        Collections.sort(customerList, new SortCustomer());
+        for(Customer cus : customerList) {
+            System.out.println(cus);
         }
     }
 }

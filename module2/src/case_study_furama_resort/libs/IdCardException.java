@@ -1,8 +1,8 @@
-package case_study_furama_resort.commons;
+package case_study_furama_resort.libs;
 
 public class IdCardException extends Exception {
     public IdCardException() {
-        super("Id Card phải có 9 chữ số và theo định dạng XXX XXX XXX.");
+        super("Id card number must have 9 digits & follows format XXX XXX XXX.");
     }
 
     public IdCardException(String message) {

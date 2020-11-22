@@ -1,8 +1,8 @@
-package case_study_furama_resort.commons;
+package case_study_furama_resort.libs;
 
 public class EmailException extends Exception {
     public EmailException() {
-        super("Email phải đúng định dạng abc@abc.abc");
+        super("Email must follow format abc@abc.abc");
     }
 
     public EmailException(String message) {
