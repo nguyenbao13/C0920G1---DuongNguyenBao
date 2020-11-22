@@ -1,6 +1,7 @@
 package case_study_furama_resort.controllers;
 
 import case_study_furama_resort.commons.FileUtils;
+import case_study_furama_resort.commons.Validate;
 import case_study_furama_resort.models.House;
 import case_study_furama_resort.models.Room;
 import case_study_furama_resort.models.Services;
@@ -10,9 +11,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MainController {
+
     public static void main(String[] args) {
         displayMainMenu();
     }
+
     private static Scanner scanner = new Scanner(System.in);
     public static void displayMainMenu() {
         boolean notExit = true;
@@ -69,40 +72,82 @@ public class MainController {
         }
     }
     public static Services addNewService(Services services) {
-        System.out.println("Enter service's name: ");
+        System.out.println("Enter service's name:");
         services.setNameService(scanner.nextLine());
+        while (!Validate.serviceNameCheck(services.getNameService())) {
+            System.out.println("Not a name (Only first letter must be uppercase)! Re-enter please:");
+            services.setNameService(scanner.nextLine());
+        }
 
-        System.out.println("Enter using area: ");
-        services.setUsingArea(Double.parseDouble(scanner.nextLine()));
+        System.out.println("Enter using area:");
+        String area = scanner.nextLine();
+        while (!Validate.areaCheck(area)) {
+            System.out.println("Area must be a number & over 30m2! Re-enter please:");
+            area = scanner.nextLine();
+        }
+        services.setUsingArea(Double.parseDouble(area));
 
-        System.out.println("Enter cost of rent: ");
-        services.setRentCost(Double.parseDouble(scanner.nextLine()));
+        System.out.println("Enter cost of rent:");
+        String rentCost = scanner.nextLine();
+        while (!Validate.rentCostCheck(rentCost)) {
+            System.out.println("Cost of rent must be a number & over Zero! Re-enter please:");
+            rentCost = scanner.nextLine();
+        }
+        services.setRentCost(Double.parseDouble(rentCost));
 
-        System.out.println("Enter max amount of people: ");
-        services.setAmountMax(Integer.parseInt(scanner.nextLine()));
+        System.out.println("Enter max amount of people:");
+        String amountMax = scanner.nextLine();
+        while (!Validate.amountMaxCheck(amountMax)) {
+            System.out.println("Max amount of people must be a number & in range (0,20)! Re-enter please:");
+            amountMax = scanner.nextLine();
+        }
+        services.setAmountMax(Integer.parseInt(amountMax));
 
         System.out.println("Enter type of rent: ");
         services.setRentType(scanner.nextLine());
+        while (!Validate.serviceNameCheck(services.getRentType())) {
+            System.out.println("Not type of rent (Only first letter must be uppercase)! Re-enter please:");
+            services.setRentType(scanner.nextLine());
+        }
 
-        System.out.println("Enter ID: ");
-        services.setId(scanner.nextLine());
         return services;
     }
     public static void addNewVilla() {
         Services services = new Villa();
         Villa villa = (Villa) addNewService(services);
-        //Tiêu chuẩn phòng, Mô tả tiện nghi khác, Diện tích hồ bơi, Số tầng.
+        //ID, Tiêu chuẩn phòng, Mô tả tiện nghi khác, Diện tích hồ bơi, Số tầng.
+        System.out.println("Enter ID: ");
+        villa.setId(scanner.nextLine());
+        while (!Validate.idVillaCheck(villa.getId())) {
+            System.out.println("Not id of villa! Re-enter please: ");
+            villa.setId(scanner.nextLine());
+        }
+
         System.out.println("Enter standard of room: ");
         villa.setRoomStandard(scanner.nextLine());
+        while (!Validate.serviceNameCheck(villa.getRoomStandard())) {
+            System.out.println("Not standard of room! Re-enter please: ");
+            villa.setRoomStandard(scanner.nextLine());
+        }
 
-        System.out.println("Enter other utility: ");
+        System.out.println("Enter other utilities: ");
         villa.setOtherUtility(scanner.nextLine());
 
         System.out.println("Enter area of pool: ");
-        villa.setPoolArea(Double.parseDouble(scanner.nextLine()));
+        String poolArea = scanner.nextLine();
+        while (!Validate.areaCheck(poolArea)) {
+            System.out.println("Area of pool must be a number & over 30m2! Re-enter please: ");
+            poolArea = scanner.nextLine();
+        }
+        villa.setPoolArea(Double.parseDouble(poolArea));
 
-        System.out.println("Enter number of floor: ");
-        villa.setFloors(Integer.parseInt(scanner.nextLine()));
+        System.out.println("Enter number of floors: ");
+        String floors = scanner.nextLine();
+        while (!Validate.floorsCheck(floors)) {
+            System.out.println("Not a number of floors! Re-enter please: ");
+            floors = scanner.nextLine();
+        }
+        villa.setFloors(Integer.parseInt(floors));
 
         FileUtils.writeFile("src/case_study_furama_resort/data/Villa", villa.toString());
         System.out.println("Added new villa successfully!");
@@ -110,15 +155,31 @@ public class MainController {
     public static void addNewHouse() {
         Services services = new House();
         House house = (House) addNewService(services);
-        //Tiêu chuẩn phòng, Mô tả tiện nghi khác, Số tầng.
+        //ID, Tiêu chuẩn phòng, Mô tả tiện nghi khác, Số tầng.
+        System.out.println("Enter ID: ");
+        house.setId(scanner.nextLine());
+        while (!Validate.idHouseCheck(house.getId())) {
+            System.out.println("Not id of house! Re-enter please: ");
+            house.setId(scanner.nextLine());
+        }
+
         System.out.println("Enter standard of room: ");
         house.setRoomStandard(scanner.nextLine());
+        while (!Validate.serviceNameCheck(house.getRoomStandard())) {
+            System.out.println("Wrong standard of room! Re-enter please: ");
+            house.setRoomStandard(scanner.nextLine());
+        }
 
         System.out.println("Enter other utility: ");
         house.setOtherUtility(scanner.nextLine());
 
         System.out.println("Enter number of floor: ");
-        house.setFloors(Integer.parseInt(scanner.nextLine()));
+        String floors = scanner.nextLine();
+        while (!Validate.floorsCheck(floors)) {
+            System.out.println("Not a number of floor! Re-enter please: ");
+            floors = scanner.nextLine();
+        }
+        house.setFloors(Integer.parseInt(floors));
 
         FileUtils.writeFile("src/case_study_furama_resort/data/House", house.toString());
         System.out.println("Added new house successfully!");
@@ -126,9 +187,20 @@ public class MainController {
     public static void addNewRoom() {
         Services services = new Room();
         Room room = (Room) addNewService(services);
-        //Dịch vụ miễn phí đi kèm.
+        //ID, Dịch vụ miễn phí đi kèm.
+        System.out.println("Enter ID: ");
+        room.setId(scanner.nextLine());
+        while (!Validate.idRoomCheck(room.getId())) {
+            System.out.println("Not id of room! Re-enter please: ");
+            room.setId(scanner.nextLine());
+        }
+
         System.out.println("Enter free service: ");
         room.setFreeService(scanner.nextLine());
+        while (!Validate.freeServiceCheck(room.getFreeService())) {
+            System.out.println("Not free service! Re-enter please: ");
+            room.setFreeService(scanner.nextLine());
+        }
 
         FileUtils.writeFile("src/case_study_furama_resort/data/Room", room.toString());
         System.out.println("Added new room successfully!");

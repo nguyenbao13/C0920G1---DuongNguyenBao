@@ -1,1 +1,1 @@
-freeService = 'massage', nameService = 'ok', usingArea = 40.0, rentCost = 45.0, amountMax = 4, rentType = '5', id = '1'
+SVRO-0001, Room, 40.0, 4.0, 4, Day, massage

@@ -3,7 +3,6 @@ package case_study_furama_resort.models;
 public abstract class Services {
     //Tên dịch vụ, Diện tích sử dụng, Chi phí thuê, Số lượng người tối đa,
     // Kiểu thuê (bao gồm thuê theo năm, tháng, ngày, giờ).
-    protected String id;
     protected String nameService;
     protected double usingArea;
     protected double rentCost;
@@ -12,13 +11,12 @@ public abstract class Services {
 
     public Services() {
     }
-    public Services(String id, String nameService, double usingArea, double rentCost, int amountMax, String rentType) {
+    public Services(String nameService, double usingArea, double rentCost, int amountMax, String rentType) {
         this.nameService = nameService;
         this.usingArea = usingArea;
         this.rentCost = rentCost;
         this.amountMax = amountMax;
         this.rentType = rentType;
-        this.id = id;
     }
 
     public String getNameService() {
@@ -61,17 +59,9 @@ public abstract class Services {
         this.rentType = rentType;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     @Override
     public String toString() {
-        return id + ", " + nameService + ", " + usingArea + ", " +
+        return nameService + ", " + usingArea + ", " +
                 rentCost + ", " + amountMax + ", " + rentType;
     }
 

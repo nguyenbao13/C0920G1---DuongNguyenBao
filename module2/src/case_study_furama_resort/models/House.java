@@ -2,23 +2,30 @@ package case_study_furama_resort.models;
 
 public class House extends Services {
     //Tiêu chuẩn phòng, Mô tả tiện nghi khác, Số tầng.
+    private String id;
     private String roomStandard;
     private String otherUtility;
     private int floors;
 
     public House() {
     }
-    public House(String roomStandard, String otherUtility, int floors) {
+    public House(String id, String roomStandard, String otherUtility, int floors) {
+        this.id = id;
         this.roomStandard = roomStandard;
         this.otherUtility = otherUtility;
         this.floors = floors;
     }
     public House(String id, String nameService, double usingArea, double rentCost, int amountMax, String rentType, String roomStandard, String otherUtility, int floors) {
-        super(id, nameService, usingArea, rentCost, amountMax, rentType);
+        super(nameService, usingArea, rentCost, amountMax, rentType);
+        this.id = id;
         this.roomStandard = roomStandard;
         this.otherUtility = otherUtility;
         this.floors = floors;
     }
+
+    public String getId() { return id; }
+
+    public void setId(String id) { this.id = id; }
 
     public String getRoomStandard() {
         return roomStandard;
@@ -46,7 +53,7 @@ public class House extends Services {
 
     @Override
     public String toString() {
-        return super.toString() + ", " + roomStandard + ", " + otherUtility + ", " + floors;
+        return id + ", " + super.toString() + ", " + roomStandard + ", " + otherUtility + ", " + floors;
     }
 
     @Override

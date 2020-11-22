@@ -2,6 +2,7 @@ package case_study_furama_resort.models;
 
 public class Villa extends Services {
     //Tiêu chuẩn phòng, Mô tả tiện nghi khác, Diện tích hồ bơi, Số tầng.
+    private String id;
     private String roomStandard;
     private String otherUtility;
     private double poolArea;
@@ -9,7 +10,8 @@ public class Villa extends Services {
 
     public Villa() {
     }
-    public Villa(String roomStandard, String otherUtility, double poolArea, int floors) {
+    public Villa(String id, String roomStandard, String otherUtility, double poolArea, int floors) {
+        this.id = id;
         this.roomStandard = roomStandard;
         this.otherUtility = otherUtility;
         this.poolArea = poolArea;
@@ -17,12 +19,17 @@ public class Villa extends Services {
     }
     public Villa(String id, String nameService, double usingArea, double rentCost, int amountMax,
                  String rentType, String roomStandard, String otherUtility, double poolArea, int floors) {
-        super(id, nameService, usingArea, rentCost, amountMax, rentType);
+        super(nameService, usingArea, rentCost, amountMax, rentType);
+        this.id = id;
         this.roomStandard = roomStandard;
         this.otherUtility = otherUtility;
         this.poolArea = poolArea;
         this.floors = floors;
     }
+
+    public String getId() { return id; }
+
+    public void setId(String id) { this.id = id; }
 
     public String getRoomStandard() {
         return roomStandard;
@@ -58,7 +65,7 @@ public class Villa extends Services {
 
     @Override
     public String toString() {
-        return super.toString() + ", " + roomStandard + ", " + otherUtility + ", " + poolArea + ", " + floors;
+        return id + ", " + super.toString() + ", " + roomStandard + ", " + otherUtility + ", " + poolArea + ", " + floors;
     }
 
     @Override
