@@ -17,6 +17,18 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(String nameCustomer, String birthday, String gender, String idCardNumber,
+                    String phoneNumber, String email, String typeOfCustomer, String address) {
+        this.nameCustomer = nameCustomer;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.idCardNumber = idCardNumber;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.typeOfCustomer = typeOfCustomer;
+        this.address = address;
+    }
+
     public Customer(String nameCustomer, String birthday, String gender, String idCardNumber, String phoneNumber,
                     String email, String typeOfCustomer, String address, Services usingService) {
         this.nameCustomer = nameCustomer;

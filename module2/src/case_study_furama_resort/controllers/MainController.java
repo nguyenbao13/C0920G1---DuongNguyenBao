@@ -3,11 +3,11 @@ package case_study_furama_resort.controllers;
 import case_study_furama_resort.commons.*;
 import case_study_furama_resort.libs.*;
 import case_study_furama_resort.models.*;
+import case_study_furama_resort.services.ManagerHouses;
+import case_study_furama_resort.services.ManagerRooms;
+import case_study_furama_resort.services.ManagerVillas;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static case_study_furama_resort.commons.FileUtils.readFile;
 import static case_study_furama_resort.commons.FileUtils.writeFile;
@@ -28,7 +28,7 @@ public class MainController {
                             "3. Add New Customer.\n" +
                             "4. Show Information of Customer.\n" +
                             "5. Add New Booking.\n" +
-                            "6. Show Information of Employee.\n" +
+                            "6. Show Information of Employees.\n" +
                             "7. Exit.\n" +
                             "Enter a number (1-7):");
             int chosen = Integer.parseInt(scanner.nextLine());
@@ -41,10 +41,10 @@ public class MainController {
                 break;
                 case 4: showInformationCustomer();
                 break;
-//            case 5: addNewBooking();
-//                    break;
-//            case 6: showInformationOfEmployee();
-//                    break;
+                case 5: addNewBooking();
+                break;
+                case 6: showInformationEmployee();
+                break;
                 case 7: System.exit(0);
                 break;
             }
@@ -217,7 +217,7 @@ public class MainController {
                             "3. Show all Room.\n" +
                             "4. Show All Name Villa Not Duplicate.\n" +
                             "5. Show All Name House Not Duplicate.\n" +
-                            "6. Show All Name Name Not Duplicate.\n" +
+                            "6. Show All Name Room Not Duplicate.\n" +
                             "7. Back to menu.\n" +
                             "8. Exit.\n" +
                             "Enter a number (1-8):");
@@ -243,9 +243,12 @@ public class MainController {
                         System.out.println(room);
                     }
                 break;
-                case 4:
-                case 5:
-                case 6:
+                case 4: showVillaNotDuplicate();
+                break;
+                case 5: showHouseNotDuplicate();
+                break;
+                case 6: showRoomNotDuplicate();
+                break;
                 case 7: displayMainMenu();
                 break;
                 case 8: System.exit(0);
@@ -351,12 +354,134 @@ public class MainController {
         for(String line : list) {
             strings = line.split(", ");
             customer = new Customer(strings[0], strings[1], strings[2], strings[3],
-                    strings[4], strings[5], strings[6], strings[7], null);
+                    strings[4], strings[5], strings[6], strings[7]);
             customerList.add(customer);
         }
         Collections.sort(customerList, new SortCustomer());
         for(Customer cus : customerList) {
             System.out.println(cus);
+        }
+    }
+
+    public static void addNewBooking() {
+        List<String> customerList = readFile("src/case_study_furama_resort/data/Customer");
+        Customer customer = null;
+        for(int i = 0; i < customerList.size(); i++) {
+            System.out.println((i+1) + ", " + customerList.get(i));
+        }
+        System.out.println("Enter number of customer to book:");
+        int number = Integer.parseInt(scanner.nextLine());
+        String[] strings;
+        for(int j = 0; j < customerList.size(); j++) {
+            if(number == j+1) {
+                strings = customerList.get(j).split(",");
+                customer = new Customer(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6], strings[7]);
+            }
+        }
+        System.out.println("1. Booking Villa\n" +
+                            "2. Booking House\n" +
+                            "3. Booking Room");
+        int numBooking = Integer.parseInt(scanner.nextLine());
+        switch (numBooking) {
+            case 1: {
+                ManagerVillas.showVilla();
+                System.out.println("Enter number of villa to append:");
+                int choose = Integer.parseInt(scanner.nextLine());
+                Villa villa = null;
+                List<Villa> list = ManagerVillas.getAllVilla();
+                for (int i = 0; i < list.size(); i++) {
+                    if (choose == i + 1) {
+                        villa = list.get(i);
+                    }
+                }
+                customer.setUsingService(villa);
+            }
+            break;
+            case 2: {
+                ManagerHouses.showHouse();
+                System.out.println("Enter number of house to append:");
+                int choose = Integer.parseInt(scanner.nextLine());
+                House house = null;
+                List<House> list = ManagerHouses.getAllHouse();
+                for (int i = 0; i < list.size(); i++) {
+                    if (choose == i + 1) {
+                        house = list.get(i);
+                    }
+                }
+                customer.setUsingService(house);
+            }
+            break;
+            case 3: {
+                ManagerRooms.showRoom();
+                System.out.println("Enter number of room to append:");
+                int choose = Integer.parseInt(scanner.nextLine());
+                Room room = null;
+                List<Room> list = ManagerRooms.getAllRoom();
+                for (int i = 0; i < list.size(); i++) {
+                    if (choose == i + 1) {
+                        room = list.get(i);
+                    }
+                }
+                customer.setUsingService(room);
+            }
+            break;
+        }
+        writeFile("src/case_study_furama_resort/data/Booking", customer.toString());
+    }
+
+    public static void showVillaNotDuplicate() {
+        List<String> villaList = readFile("src/case_study_furama_resort/data/Villa");
+        String[] strings;
+        TreeSet<String> treeSetVilla = new TreeSet<>();
+        for(String line : villaList) {
+            strings = line.split(", ");
+            treeSetVilla.add(strings[1]);
+        }
+        for(String name : treeSetVilla) {
+            System.out.println(name);
+        }
+        displayMainMenu();
+    }
+    public static void showHouseNotDuplicate() {
+        List<String> houseList = readFile("src/case_study_furama_resort/data/House");
+        String[] strings;
+        TreeSet<String> treeSetHouse = new TreeSet<>();
+        for(String line : houseList) {
+            strings = line.split(", ");
+            treeSetHouse.add(strings[1]);
+        }
+        for(String name : treeSetHouse) {
+            System.out.println(name);
+        }
+        displayMainMenu();
+    }
+    public static void showRoomNotDuplicate() {
+        List<String> roomList = readFile("src/case_study_furama_resort/data/Room");
+        String[] strings;
+        TreeSet<String> treeSetRoom = new TreeSet<>();
+        for(String line : roomList) {
+            strings = line.split(", ");
+            treeSetRoom.add(strings[1]);
+        }
+        for(String name : treeSetRoom) {
+            System.out.println(name);
+        }
+        displayMainMenu();
+    }
+    public static void showInformationEmployee() {
+        List<String> employeeList = readFile("src/case_study_furama_resort/data/Employees");
+        String[] strings;
+        Employee employee;
+        int i = 1;
+        Map<Integer, String> map = new HashMap<Integer, String>();
+        for(String line : employeeList) {
+            strings = line.split(", ");
+            employee = new Employee(strings[0], strings[1], strings[2]);
+            map.put(i, employee.toString());
+            i++;
+        }
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
         }
     }
 }
