@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Cinema4d {
+public class Cinema4D {
     public static void main(String[] args) {
         Customer customer1 = new Customer("A Nguyen", "30/04/1975", "male", "123 345 456",
                 "09121314", "aaa@gmail.com", "vip", "dongda");

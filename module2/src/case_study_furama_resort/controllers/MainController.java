@@ -29,7 +29,8 @@ public class MainController {
                             "4. Show Information of Customer.\n" +
                             "5. Add New Booking.\n" +
                             "6. Show Information of Employees.\n" +
-                            "7. Exit.\n" +
+                            "7. Search employee.\n" +
+                            "8. Exit.\n" +
                             "Enter a number (1-7):");
             int chosen = Integer.parseInt(scanner.nextLine());
             switch (chosen) {
@@ -45,7 +46,9 @@ public class MainController {
                 break;
                 case 6: showInformationEmployee();
                 break;
-                case 7: System.exit(0);
+                case 7: FilingCabinets.SearchEmployee();
+                break;
+                case 8: System.exit(0);
                 break;
             }
         }
@@ -223,25 +226,11 @@ public class MainController {
                             "Enter a number (1-8):");
             int showServicesChosen = Integer.parseInt(scanner.nextLine());
             switch (showServicesChosen) {
-                case 1:
-//                    List<Villa> villaList = FileUtils.readFileVilla("src/case_study_furama_resort/data/Villa");
-//                    for(Villa villa : villaList) {System.out.println(villa);}
-                    List<String> villaList = readFile("src/case_study_furama_resort/data/Villa");
-                    for(String villa : villaList) {
-                        System.out.println(villa);
-                    }
+                case 1: ManagerVillas.showVilla();
                 break;
-                case 2:
-                    List<String> houseList = readFile("src/case_study_furama_resort/data/House");
-                    for(String house : houseList) {
-                        System.out.println(house);
-                    }
+                case 2: ManagerHouses.showHouse();
                 break;
-                case 3:
-                    List<String> roomList = readFile("src/case_study_furama_resort/data/Room");
-                    for(String room : roomList) {
-                        System.out.println(room);
-                    }
+                case 3: ManagerRooms.showRoom();
                 break;
                 case 4: showVillaNotDuplicate();
                 break;
@@ -291,17 +280,10 @@ public class MainController {
         while (!check) {
             try {
                 System.out.println("Enter customer's gender:");
-                String temp = scanner.nextLine();
+                String temp = scanner.nextLine().toLowerCase();
                 genderCheck(temp);
                 check = true;
-                String gender = "";
-                for(int i = 0; i < temp.length(); i++) {
-                    if(i == 0) {
-                        gender += temp.toUpperCase().charAt(i);
-                    } else {
-                        gender += temp.toLowerCase().charAt(i);
-                    }
-                }
+                String gender = temp.substring(0,1).toUpperCase() + temp.substring(1);
                 customer.setGender(gender);
             } catch (GenderException e) {
                 System.out.println(e.getMessage());
@@ -485,4 +467,3 @@ public class MainController {
         }
     }
 }
-
