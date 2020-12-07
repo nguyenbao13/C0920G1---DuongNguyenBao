@@ -9,14 +9,14 @@ value (1, 'Trung cấp'), (2, 'Cao đẳng'), (3, 'Đại học'), (4, 'Sau đ�
 insert into bo_phan (id_bo_phan, ten_bo_phan)
 value (1, 'Quản lý'), (2, 'Hành chính'), (3, 'Sale – Marketing'), (4, 'Phục vụ');
 
--- Nhân viên: H|T|K tối đa 15 chars
+-- Nhân viên: bắt đầu với H|T|K VÀ tối đa 15 chars
 insert into nhan_vien (id_nhan_vien, ho_ten, id_vi_tri, id_trinh_do, id_bo_phan, ngay_sinh, so_cmnd, luong, sdt, email, dia_chi) value
-(1, 'Hưng', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
-(2, 'Tiến Nguyễn', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
+(1, 'Hung', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
+(2, 'Nguyen Tien Van', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
 (3, 'Khang', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
-(4, 'Khánh Nguyễn Văn', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
-(5, 'Tâm', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
-(6, 'Bảo Dương', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng');
+(4, 'Khanh Nguyen', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
+(5, 'Tam', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng'),
+(6, 'Bao Duong', 1, 1, 1, '1999-12-12', 123123123, 123123123, 12312312, 'abc@abc.com', 'đà nẵng');
 
 insert into dich_vu_di_kem (id_dich_vu_di_kem, ten_dich_vu_di_kem, gia, don_vi, trang_thai_kha_dung) value
 (1, 'massage', 123, 123, 'ok'),
