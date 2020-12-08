@@ -53,15 +53,23 @@ END //
 DELIMITER ;
 call add_new_product(5, 'sn', 'sony', 30, 4, 'xperia 1', 'avail');
 
--- DELIMITER //
--- CREATE PROCEDURE update_product_by_id (in id int, in product_code varchar(15), in product_name varchar(45), in product_price int, 
--- in product_amount int, in product_description text, in product_status varchar(15))
--- BEGIN 
--- UPDATE products 
--- SET id = id, product_code = product_code, product_name = product_name, product_price = product_price, 
--- product_amount = product_amount, product_description = product_description, product_status = product_status
--- WHERE id = id;
--- END//
--- DELIMITER ;
--- call update_product_by_id
+DELIMITER //
+CREATE PROCEDURE update_product_by_id (in id1 int, in product_code1 varchar(15), in product_name1 varchar(45), in product_price1 int, 
+in product_amount1 int, in product_description1 text, in product_status1 varchar(15))
+BEGIN 
+UPDATE products
+SET id = id1, product_code = product_code1, product_name = product_name1, product_price = product_price1, 
+product_amount = product_amount1, product_description = product_description1, product_status = product_status1
+WHERE id = id1;
+END//
+DELIMITER ;
+call update_product_by_id(2, 'lg', 'lg', 30, 4, 'update', 'avail');
 
+delimiter //
+create procedure delete_product (in id1 int)
+begin
+delete from products
+where id = id1;
+end//
+delimiter ;
+call delete_product(4);
