@@ -4,17 +4,17 @@ select * from nhan_vien
 where (ho_ten like 'H%' or ho_ten like 'T%' or ho_ten like 'K%') and length(ho_ten) <= 15;
 
 -- Khách hàng: tuổi 18-50 VÀ địa chỉ Đà Nẵng|Quảng Trị
-select * from khachhang 
-where (date_sub(now() , interval 18 year) <= khachhang.ngay_sinh and date_sub(now() , interval 50 year) >= khachhang.ngay_sinh) 
-and (khachhang.diachi like "đà nẵng" or khachhang.diachi like "quảng trị");
+select * from khach_hang 
+where year(curdate()) - year(ngay_sinh) <= 50 and year(curdate()) - year(ngay_sinh) >= 18
+and (dia_chi like "đà nẵng" or dia_chi like "quảng trị");
 
--- đếm xem mỗi khách hàng đặt phòng bao nhiêu lần. hiển thị sắp xếp tăng dần theo số phòng. và khác hàng là diamond
-select hopdong.khach_hang_id, khachhang.ho_ten, loaikhachhang.ten_loai_khach_hang, count(hopdong.dich_vu_id) as countHopDong 
-	from hopdong join khachhang on hopdong.khach_hang_id = khachhang.id_khach_hang
-	join loaikhachhang on khachhang.loai_khach_hang_id = loaikhachhang.id_loai_khach_hang 
-	where loaikhachhang.ten_loai_khach_hang = "Diamond"
-	group by hopdong.khach_hang_id
-    order by countHopDong;
+-- Đếm mỗi khách hàng đặt phòng bao nhiêu lần, hiển thị sắp xếp tăng dần theo số lần đặt và khách hàng là diamond
+select hop_dong.id_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach, count(hop_dong.id_dich_vu) as count_hop_dong 
+	from hop_dong join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
+	join loai_khach on khach_hang.id_loai_khach = loai_khach.id_loai_khach 
+	where loai_khach.ten_loai_khach = "Diamond"
+	group by hop_dong.id_khach_hang
+    order by count_hop_dong;
     
 -- Hien thi tong tien
 select khachhang.id_khach_hang, khachhang.ho_ten, loaikhachhang.ten_loai_khach_hang, hopdong.id_hop_dong, 

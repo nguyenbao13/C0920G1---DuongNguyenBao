@@ -58,12 +58,12 @@ CREATE PROCEDURE update_product_by_id (in id1 int, in product_code1 varchar(15),
 in product_amount1 int, in product_description1 text, in product_status1 varchar(15))
 BEGIN 
 UPDATE products
-SET id = id1, product_code = product_code1, product_name = product_name1, product_price = product_price1, 
+SET product_code = product_code1, product_name = product_name1, product_price = product_price1, 
 product_amount = product_amount1, product_description = product_description1, product_status = product_status1
 WHERE id = id1;
 END//
 DELIMITER ;
-call update_product_by_id(2, 'lg', 'lg', 30, 4, 'update', 'avail');
+call update_product_by_id(2, 'op', 'oppo', 30, 4, 'update', 'avail');
 
 delimiter //
 create procedure delete_product (in id1 int)
