@@ -1,5 +1,5 @@
-drop database if exists furama_resort;
-create database furama_resort;
+-- drop database if exists furama_resort;
+-- create database furama_resort;
 use furama_resort;
 create table vi_tri (
 id_vi_tri int primary key,

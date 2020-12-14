@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/6_CSS_Cascading_Style_Stylesheet.iml" filepath="$PROJECT_DIR$/.idea/6_CSS_Cascading_Style_Stylesheet.iml" />
       <module fileurl="file://$PROJECT_DIR$/../7_Thiet_ke_bo_cuc_trang_web/.idea/7_Thiet_ke_bo_cuc_trang_web.iml" filepath="$PROJECT_DIR$/../7_Thiet_ke_bo_cuc_trang_web/.idea/7_Thiet_ke_bo_cuc_trang_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../8_Bootstrap_co_ban/.idea/8_Bootstrap_co_ban.iml" filepath="$PROJECT_DIR$/../8_Bootstrap_co_ban/.idea/8_Bootstrap_co_ban.iml" />
     </modules>
   </component>
 </project>
