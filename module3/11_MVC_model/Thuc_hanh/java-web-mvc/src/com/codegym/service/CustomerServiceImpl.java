@@ -2,16 +2,13 @@ package com.codegym.service;
 
 import com.codegym.model.Customer;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CustomerServiceImpl implements CustomerService {
     private static Map<Integer, Customer> customers;
 
     static {
-        customers = new HashMap<>();
+        customers = new TreeMap<>();
         customers.put(1, new Customer(1, "John", "john@codegym.vn", "Hanoi"));
         customers.put(2, new Customer(2, "Bill", "bill@codegym.vn", "Danang"));
         customers.put(3, new Customer(3, "Alex", "alex@codegym.vn", "Saigon"));
