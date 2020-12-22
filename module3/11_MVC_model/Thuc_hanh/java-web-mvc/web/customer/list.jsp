@@ -18,13 +18,13 @@
 </p>
 <table border="1">
     <tr>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Address</td>
-        <td>Edit</td>
-        <td>Delete</td>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
-    <c:forEach items='${requestScope["customers"]}' var="customer">
+    <c:forEach items="${customers}" var="customer">
         <tr>
             <td><a href="/customers?action=view&id=${customer.getId()}">${customer.getName()}</a></td>
             <td>${customer.getEmail()}</td>

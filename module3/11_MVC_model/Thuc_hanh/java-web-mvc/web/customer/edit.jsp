@@ -14,8 +14,8 @@
 <body>
 <h1>Edit customer</h1>
 <p>
-    <c:if test='${requestScope["message"] != null}'>
-        <span class="message">${requestScope["message"]}</span>
+    <c:if test='${message != null}'>
+        <span class="message">${message}</span>
     </c:if>
 </p>
 <p>
@@ -27,15 +27,15 @@
         <table>
             <tr>
                 <td>Name: </td>
-                <td><input type="text" name="name" id="name" value="${requestScope["customer"].getName()}"></td>
+                <td><input type="text" name="name" id="name" value="${customer.getName()}"></td>
             </tr>
             <tr>
                 <td>Email: </td>
-                <td><input type="text" name="email" id="email" value="${requestScope["customer"].getEmail()}"></td>
+                <td><input type="text" name="email" id="email" value="${customer.getEmail()}"></td>
             </tr>
             <tr>
                 <td>Address: </td>
-                <td><input type="text" name="address" id="address" value="${requestScope["customer"].getAddress()}"></td>
+                <td><input type="text" name="address" id="address" value="${customer.getAddress()}"></td>
             </tr>
             <tr>
                 <td></td>
