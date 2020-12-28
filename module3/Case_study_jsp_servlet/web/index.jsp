@@ -11,40 +11,49 @@
   <title>FURAMA RESORT</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous"/>
 </head>
 <body>
 <!-- Header -->
 <div style="position: fixed; z-index: 9; margin: 0 ; width: 100%">
-  <nav class="navbar navbar-light" style="background-color: snow;">
+  <nav class="navbar navbar-light" style="background-color: white;">
     <a class="navbar-brand" href="#" style="margin-left: 70px">
-      <img src="http://www.dongkhoitravel.com.vn/upload/product/furamresort-3272.png" width="200" height="90"
+      <img src="http://www.dongkhoitravel.com.vn/upload/product/furamresort-3272.png" width="190" height="85"
            class="d-inline-block align-top" alt="1">
     </a>
-    <p style="font-size: 20px; margin-right: 30px"> Dương Nguyên Bảo</p>
+    <p style="font-size: 25px; margin-right: 50px; font-family: 'Comic Sans MS'; color: cadetblue">Duong Nguyen Bao</p>
   </nav>
   <%--Header-link--%>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: cadetblue">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active mr-5" style="margin-left: 100px">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="index.jsp">Home</a>
         </li>
         <li class="nav-item active mr-5">
-          <a class="nav-link" href="#">Employee</a>
+          <a class="nav-link" href="/employees">Employee</a>
         </li>
         <li class="nav-item active mr-5">
-          <a class="nav-link" href="#">Customer</a>
+          <a class="nav-link" href="/customers">Customer</a>
         </li>
         <li class="nav-item active mr-5">
-          <a class="nav-link" href="#">Service</a>
+          <a class="nav-link" href="/services">Service</a>
         </li>
         <li class="nav-item active mr-5">
-          <a class="nav-link" href="#">Contract</a>
+          <a class="nav-link" href="/contracts">Contract</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="input-group mb-0">
+          <div class="input-group-prepend">
+            <button class="btn btn-light" type="submit" style="border-radius: 20px 0px 0px 20px">
+              <i class="fas fa-search" style="color: cadetblue;"></i></button>
+          </div>
+          <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1"
+                 style="margin-right: 50px; border-radius: 0px 20px 20px 0px">
+        </div>
       </form>
     </div>
   </nav>
@@ -52,7 +61,7 @@
 <%--Body--%>
 <div style="position: relative; top: 170px">
   <%--Body-left--%>
-  <div class="card" style="width: 18rem; position: absolute; float: left">
+  <div class="card" style="width: 23%; position: absolute; float: left">
     <div id="myCarousel" class="carousel slide border" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -82,26 +91,33 @@
       <p class="card-text">THIS WORLD CLASS RESORT, FURAMA DANANG, REPUTABLE AS THE CULINARY BEACH RESORT IN VIETNAM.</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</li>
-      <li class="list-group-item">84-236-3847 333/888</li>
-      <li class="list-group-item">reservation@furamavietnam.com</li>
+      <li class="list-group-item"><i class="fas fa-map-marker-alt" style="color: cadetblue"></i>
+        103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</li>
+      <li class="list-group-item"><i class="fas fa-phone" style="color: cadetblue"></i> 84-236-3847 333/888</li>
+      <li class="list-group-item"><i class="fas fa-envelope" style="color: cadetblue"></i> reservation@furamavietnam.com</li>
     </ul>
     <div class="card-body">
-      <a href="https://www.facebook.com/furamaresort/" class="card-link">Facebook</a>
-      <a href="https://www.instagram.com/furama_resort_danang/?hl=vi" class="card-link">Instagram</a>
+      <a href="https://www.facebook.com/furamaresort/" class="card-link" style="margin-left: 30px">
+        <i class="fab fa-facebook fa-2x" style="color: cadetblue"></i></a>
+      <a href="https://www.instagram.com/furama_resort_danang/?hl=vi" class="card-link" style="margin-left: 40px">
+        <i class="fab fa-instagram fa-2x" style="color: cadetblue"></i></a>
+      <a href="https://www.tripadvisor.com/Hotel_Review-g298085-d302750-Reviews-Furama_Resort_Danang-Da_Nang.html"
+         class="card-link" style="margin-left: 40px">
+        <i class="fab fa-tripadvisor fa-2x" style="color: cadetblue"></i></a>
     </div>
   </div>
   <%--Body right--%>
-  <div class="card" style="width: 82%; margin-left: 18rem">
-    <div class="card-body">
-      This is some text within a card body.
+  <div style="width: 77%; margin-left: 23%; height: 635px; border: hidden">
+    <div style="text-align: center">
+      <img src="https://thodiavn24h.com/wp-content/uploads/2020/05/toan-canh-furama-resort-danang-1-1280x720.jpg"
+           style="height: 635px; width: 1000px">
     </div>
   </div>
-  <%--Footer--%>
-  <div class="card" style="margin-top: 50%">
-    <div class="card-body" style="text-align: center">
-      ©copyright-DuongNguyenBao
-    </div>
+</div>
+<%--Footer--%>
+<div style="width: 100%; margin-top: 175px; border: hidden; background-color: cadetblue">
+  <div class="card-body" style="text-align: center; color: white">
+    © 2020 Furama Resort Danang.
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

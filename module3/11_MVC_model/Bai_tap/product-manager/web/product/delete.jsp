@@ -20,7 +20,7 @@
         <table>
             <tr>
                 <td>Name: </td>
-                <td>${product.getName()}</td>
+                <td>${product.name}</td>
             </tr>
             <tr>
                 <td>Expiry date: </td>
