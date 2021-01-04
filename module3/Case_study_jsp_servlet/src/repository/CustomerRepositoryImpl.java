@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepositoryImpl implements CustomerRepository {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/furama_jsp_servlet";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "Baolatao1";
+//    private String jdbcURL = "jdbc:mysql://localhost:3306/furama_jsp_servlet";
+//    private String jdbcUsername = "root";
+//    private String jdbcPassword = "Baolatao1";
 
     private static final String INSERT_CUSTOMER_SQL = "INSERT INTO customer (customer_id, customer_type_id, customer_name, " +
             "customer_birthday, customer_gender, customer_id_card, customer_phone, customer_email, customer_address) " +
@@ -21,21 +21,22 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     private static final String SELECT_CUSTOMER = "select * from customer where customer_id = ?";
     private static final String SELECT_CUSTOMER_BY_NAME = "select * from customer where customer_name like ?";
 
-    protected Connection getConnection() {
-        Connection connection = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return connection;
-    }
+//    protected Connection getConnection() {
+//        Connection connection = null;
+//        try {
+//            Class.forName("com.mysql.jdbc.Driver");
+//            connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+//        } catch (SQLException | ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        return connection;
+//    }
+    ConnectionDatabase connectionDatabase = new ConnectionDatabase();
 
     @Override
     public List<Customer> findAll() {
         List<Customer> customerList = new ArrayList<>();
-        try (Connection connection = getConnection();
+        try (Connection connection = connectionDatabase.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_CUSTOMERS);) {
             System.out.println(preparedStatement);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -72,7 +73,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public Customer findById(String id) {
         Customer customer = null;
-        try (Connection connection = getConnection();
+        try (Connection connection = connectionDatabase.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER)) {
             preparedStatement.setString(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -89,13 +90,19 @@ public class CustomerRepositoryImpl implements CustomerRepository {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connectionDatabase.getConnection().close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return customer;
     }
 
     @Override
     public void insert(Customer customer) throws SQLException {
-        try (Connection connection = getConnection();
+        try (Connection connection = connectionDatabase.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER_SQL)) {
             preparedStatement.setString(1, customer.getId());
             preparedStatement.setString(2, customer.getCusType());
@@ -112,7 +119,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public void update(Customer customer) throws SQLException {
-        try(Connection connection = getConnection();
+        try(Connection connection = connectionDatabase.getConnection();
             PreparedStatement statement = connection.prepareStatement(UPDATE_CUSTOMER_SQL)) {
             statement.setString(1, customer.getCusType());
             statement.setString(2, customer.getCusName());
@@ -130,7 +137,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public List<Customer> findByName(String name) {
         List<Customer> customerList = new ArrayList<>();
-        try (Connection connection = getConnection();
+        try (Connection connection = connectionDatabase.getConnection();
              PreparedStatement statement = connection.prepareStatement(SELECT_CUSTOMER_BY_NAME)){
             statement.setString(1,"%"+name+"%");
             ResultSet resultSet = statement.executeQuery();
@@ -154,7 +161,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public void delete(String id) {
-        try(Connection connection = getConnection();
+        try(Connection connection = connectionDatabase.getConnection();
             PreparedStatement statement = connection.prepareStatement(DELETE_CUSTOMER_SQL)) {
             statement.setString(1, id);
             statement.executeUpdate();

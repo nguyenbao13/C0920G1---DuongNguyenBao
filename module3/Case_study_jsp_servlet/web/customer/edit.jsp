@@ -19,7 +19,6 @@
 <body>
 <div><h3 style="margin-left: 25%; margin-top: 10px">Edit Customer</h3></div>
 <div align="center">
-    <%--    <h5><a href="customers">List All Customers</a></h5>--%>
     <form method="post">
         <table class="table table-hover" style="width: 50%">
             <tr>

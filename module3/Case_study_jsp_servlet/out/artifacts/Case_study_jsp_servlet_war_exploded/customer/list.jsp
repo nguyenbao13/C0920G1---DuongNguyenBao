@@ -119,7 +119,7 @@
     <div style="width: 77%; margin-left: 23%; height: 635px; border: hidden">
         <div style="text-align: center;">
             <h3>Customer List</h3>
-            <h5><a href="" data-toggle="modal" data-target="#createModal" style="text-decoration: none">Add New Customer</a></h5>
+            <h5><a href="/customers?action=create" style="text-decoration: none">Add New Customer</a></h5>
             <h5 style="color: green">${message}</h5>
         </div>
         <div align="center">
@@ -142,7 +142,7 @@
                 <tbody>
                 <c:forEach var="customer" items="${listCustomer}">
                     <tr>
-                        <td id="id1"><c:out value="${customer.id}"/></td>
+                        <td><c:out value="${customer.id}"/></td>
                         <td><c:out value="${customer.cusType}"/></td>
                         <td><c:out value="${customer.cusName}"/></td>
                         <td><c:out value="${customer.cusDob}"/></td>
@@ -154,7 +154,8 @@
                         <td>
                             <a href="/customers?action=edit&id=${customer.id}" style="text-decoration: none">Edit</a>
                             <a href="" data-toggle="modal" data-target="#deleteModal"
-                               onclick="deleteCustomerId()" style="text-decoration: none; color: red">Delete</a>
+                               onclick="deleteCustomerId('${customer.id}', '${customer.cusName}')"
+                               style="text-decoration: none; color: red">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -167,93 +168,6 @@
 <div style="width: 100%; margin-top: 175px; border: hidden; background-color: cadetblue">
     <div class="card-body" style="text-align: center; color: white">
         © 2020 Furama Resort Danang.
-    </div>
-</div>
-<%--Modal Create--%>
-<div class="modal fade" tabindex="-13" role="dialog" id="createModal">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <form method="post" action="/customers?action=create">
-                <div class="modal-header">
-                    <h5 class="modal-title">Create Customer</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-hover">
-                        <tr>
-                            <th>ID</th>
-                            <td>
-                                <input type="text" name="id" id="id" size="45" required pattern="^(KH-)\d{4}$"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Type</th>
-                            <td>
-                                <select name="type" id="type">
-                                    <option value=1>Diamond</option>
-                                    <option value=2>Platinum</option>
-                                    <option value=3>Gold</option>
-                                    <option value=4>Silver</option>
-                                    <option value=5>Member</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Name</th>
-                            <td>
-                                <input type="text" name="name" id="name" size="45" required/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Birthday</th>
-                            <td>
-                                <input type="text" name="birthday" id="birthday" size="45" required/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Gender</th>
-                            <td>
-                                <select name="gender" id="gender">
-                                    <option value=0>Female</option>
-                                    <option value=1>Male</option>
-                                    <option value=2>Other</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>ID card number</th>
-                            <td>
-                                <input type="text" name="idCard" id="idCard" size="45" required/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Phone number</th>
-                            <td>
-                                <input type="text" name="phone" id="phone" size="45" required/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Email</th>
-                            <td>
-                                <input type="text" name="email" id="email" size="45" required/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Address</th>
-                            <td>
-                                <input type="text" name="address" id="address" size="45" required/>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save New Customer</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-        </div>
     </div>
 </div>
 <!--Modal Delete-->
@@ -285,9 +199,10 @@
     function submitDelete() {
         document.getElementById("deleteCustomer").submit();
     }
-    function deleteCustomerId() {
-        document.getElementById('modelId').innerText = 'Are you sure to delete this customer ?';
-        document.getElementById('id_customer').value = document.getElementById('id1').innerText;
+
+    function deleteCustomerId(id, name) {
+        document.getElementById('modelId').innerText = 'Are you sure to delete customer ' + name + ' ?';
+        document.getElementById('id_customer').value = id;
     }
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -1,8 +1,6 @@
 package service;
 
 import model.Customer;
-import repository.CustomerRepository;
-import repository.CustomerRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;

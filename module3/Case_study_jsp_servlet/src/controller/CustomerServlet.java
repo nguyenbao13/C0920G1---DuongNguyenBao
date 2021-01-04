@@ -33,7 +33,6 @@ public class CustomerServlet extends HttpServlet {
             case "edit":
                 editCustomer(request, response);
                 break;
-
         }
     }
 
@@ -58,72 +57,106 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
-//        String messageId = null;
-//        String messageBirthday = null;
-//        String messageIdCard = null;
-//        String messagePhone = null;
-//        String messageEmail = null;
-//        boolean check = true;
-
-        String id = null;
+//        String id = request.getParameter("id");
+//        String type = request.getParameter("type");
+//        String name = request.getParameter("name");
+//        String birthday = request.getParameter("birthday");
+//        String gender = request.getParameter("gender");
+//        String idCard = request.getParameter("idCard");
+//        String phone = request.getParameter("phone");
+//        String email = request.getParameter("email");
+//        String address = request.getParameter("address");
 //        try {
-            id = request.getParameter("id");
-//            Validate.regexCustomerId(id);
-////        } catch (IdException e) {
-//            messageId = e.getMessage();
-//            check = false;
+//            customerService.insert(new Customer(id, type, name, birthday, gender, idCard, phone, email, address));
+//            request.setAttribute("message","Added customer !");
+//            listCustomer(request, response);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
 //        }
+        boolean check = true;
+        String messageId = null;
+        String messageIdCard = null;
+        String messagePhone= null;
+        String messageBirthday = null;
+        String messageEmail = null;
+        String birthday = null;
+        String phone = null;
+        String email = null;
+        String id = null;
+        String idCard = null;
+
+        try {
+            id = request.getParameter("id");
+            Validate.regexCustomerId(id);
+        } catch (IdException e) {
+            messageId = e.getMessage();
+            check = false;
+        }
+
         String type = request.getParameter("type");
         String name = request.getParameter("name");
-        String birthday = null;
-//        try {
+
+        try {
             birthday = request.getParameter("birthday");
-//            Validate.regexDate(birthday);
-//        } catch (DateException e) {
-//            messageBirthday = e.getMessage();
-//            check = false;
-//        }
+            Validate.regexDate(birthday);
+        } catch (DateException e) {
+            messageBirthday = e.getMessage();
+            check = false;
+        }
+
         String gender = request.getParameter("gender");
-        String idCard = null;
-//        try {
+
+        try {
             idCard = request.getParameter("idCard");
-//            Validate.regexIdCard(idCard);
-//        } catch (IdCardException e) {
-//            messageIdCard = e.getMessage();
-//            check = false;
-//        }
-        String phone = null;
-//        try {
+            Validate.regexIdCard(idCard);
+        }catch (IdCardException e){
+            messageIdCard = e.getMessage();
+            check = false;
+        }
+
+        try {
             phone = request.getParameter("phone");
-//            Validate.regexPhone(phone);
-//        } catch (NumberPhoneException e) {
-//            messagePhone = e.getMessage();
-//            check = false;
-//        }
-        String email = null;
-//        try {
+            Validate.regexPhone(phone);
+        } catch (NumberPhoneException e) {
+            messagePhone = e.getMessage();
+            check = false;
+        }
+        try {
             email = request.getParameter("email");
-//            Validate.regexEmail(email);
-//        } catch (EmailException e) {
-//            messageEmail = e.getMessage();
-//            check = false;
-//        }
+            Validate.regexEmail(email);
+        } catch (EmailException e) {
+            messageEmail = e.getMessage();
+            check = false;
+        }
         String address = request.getParameter("address");
-//        if (!check) {
-//            request.setAttribute("messageId", messageId);
-//            request.setAttribute("messageBirthday", messageBirthday);
-//            request.setAttribute("messageIdCard", messageIdCard);
-//            request.setAttribute("messagePhone", messagePhone);
-//            request.setAttribute("messageEmail", messageEmail);
-//        } else {
+
+        if (!check){
+//            request.setAttribute("id", id);
+//            request.setAttribute("type", type);
+//            request.setAttribute("name", name);
+//            request.setAttribute("birthday", birthday);
+//            request.setAttribute("gender", gender);
+//            request.setAttribute("idCard", idCard);
+//            request.setAttribute("phone", phone);
+//            request.setAttribute("email", email);
+//            request.setAttribute("address", address);
+
+            request.setAttribute("messageId", messageId);
+            request.setAttribute("messageIdCard", messageIdCard);
+            request.setAttribute("messageBirthday", messageBirthday);
+            request.setAttribute("messagePhone", messagePhone);
+            request.setAttribute("messageEmail", messageEmail);
+
+            showCreateCustomer(request, response);
+        } else {
             try {
                 customerService.insert(new Customer(id, type, name, birthday, gender, idCard, phone, email, address));
-                request.setAttribute("message","Added customer !");
-                listCustomer(request,response);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-//        }
+            request.setAttribute("message","Added new customer !");
+            listCustomer(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

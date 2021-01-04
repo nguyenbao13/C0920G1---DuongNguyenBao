@@ -114,5 +114,9 @@ quantity int,
 foreign key (contract_id) references contract(contract_id),
 foreign key (attach_service_id)  references attach_service(attach_service_id)
 );
-INSERT INTO furama_jsp_servlet.customer_type (customer_type_id, customer_type_name) 
+INSERT INTO customer_type (customer_type_id, customer_type_name) 
 VALUES ('1', 'Diamond'), ('2', 'Platinum'), ('3', 'Gold'), ('4', 'Silver'), ('5', 'Member');
+insert into rent_type (rent_type_id, rent_type_name, rent_type_cost)
+values (1, 'year', 4), (2, 'month', 3), (3, 'day', 2), (4, 'hour', 1);
+insert into service_type (service_type_id, service_type_name)
+values (1, 'villa'), (2, 'house'), (3, 'room');
