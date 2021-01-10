@@ -1,4 +1,6 @@
 package com.codegym.repository;
 
-public interface ProductRepository extends Repository {
+import com.codegym.model.Product;
+
+public interface ProductRepository extends Repository<Product> {
 }
