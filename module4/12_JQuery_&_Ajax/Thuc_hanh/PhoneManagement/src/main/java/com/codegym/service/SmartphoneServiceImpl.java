@@ -3,7 +3,9 @@ package com.codegym.service;
 import com.codegym.model.Smartphone;
 import com.codegym.repository.SmartphoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SmartphoneServiceImpl implements SmartphoneService {
 
     @Autowired
@@ -16,7 +18,7 @@ public class SmartphoneServiceImpl implements SmartphoneService {
 
     @Override
     public Smartphone findById(Integer id) {
-        Smartphone smartphone = smartphoneRepository.findOne(id);
+        Smartphone smartphone = smartphoneRepository.findById(id).orElse(null);
         if(smartphone == null){
             return null;
         }
@@ -31,7 +33,7 @@ public class SmartphoneServiceImpl implements SmartphoneService {
     @Override
     public Smartphone remove(Integer id) {
         Smartphone smartphone = findById(id);
-        smartphoneRepository.delete(id);
+        smartphoneRepository.deleteById(id);
         return smartphone;
     }
 }

@@ -3,13 +3,10 @@ package com.codegym.controller;
 import com.codegym.model.Smartphone;
 import com.codegym.service.SmartphoneService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.persistence.criteria.CriteriaBuilder;
 
 @Controller
 @RequestMapping(value = "/smartphones")
