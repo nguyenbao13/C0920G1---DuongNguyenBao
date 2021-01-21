@@ -1,9 +1,9 @@
-package blog.model;
+package com.codegym.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "blog")
+//@Table(name = "blog")
 public class Blog {
 
     @Id
@@ -11,12 +11,19 @@ public class Blog {
     private int id;
     private String title;
     private String content;
+    private String dateCreated;
 
-    public Blog() {}
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
 
-    public Blog(String title, String content) {
+    public Blog() {
+    }
+
+    public Blog(String title, String content, String dateCreated) {
         this.title = title;
         this.content = content;
+        this.dateCreated = dateCreated;
     }
 
     public int getId() {
@@ -41,5 +48,13 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(String dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }

@@ -1,13 +1,13 @@
-package blog;
+package com.codegym;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BlogApplication {
+public class SpringRoleBasedAuthorizationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BlogApplication.class, args);
+        SpringApplication.run(SpringRoleBasedAuthorizationApplication.class, args);
     }
 
 }

@@ -1,7 +1,7 @@
-package blog.controller;
+package com.codegym.controller;
 
-import blog.model.Blog;
-import blog.service.BlogService;
+import com.codegym.entity.Blog;
+import com.codegym.service.BlogService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
