@@ -7,11 +7,13 @@
 <body>
 <h1>View Blog</h1>
 <p>
-    <a href="/blogs">Blog List</a>
+    <a href="/blog">Blog List</a>
 </p>
 <fieldset>
     <legend th:text="${blog.title}"></legend>
     <div th:text="*{blog.content}"></div>
+    <div th:text="*{blog.category.name}"></div>
+    <div th:text="*{blog.dateCreated}"></div>
 </fieldset>
 </body>
 </html>

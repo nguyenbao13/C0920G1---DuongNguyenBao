@@ -7,10 +7,11 @@ import javax.persistence.*;
 public class Blog {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int id;
     private String title;
     private String content;
+    @Column(name = "date_created")
     private String dateCreated;
 
     @ManyToOne
@@ -18,12 +19,6 @@ public class Blog {
     private Category category;
 
     public Blog() {
-    }
-
-    public Blog(String title, String content, String dateCreated) {
-        this.title = title;
-        this.content = content;
-        this.dateCreated = dateCreated;
     }
 
     public int getId() {
@@ -56,5 +51,13 @@ public class Blog {
 
     public void setDateCreated(String dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

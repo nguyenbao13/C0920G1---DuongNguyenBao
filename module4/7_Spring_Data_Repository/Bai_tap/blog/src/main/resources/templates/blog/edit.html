@@ -7,12 +7,12 @@
 <body>
 <h1>Edit Blog</h1>
 <p>
-    <a href="/blogs">Blog List</a>
+    <a href="/blog">Blog List</a>
 </p>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/edit-blog}" th:object="${blog}" method="post">
+<form th:action="@{/blog/edit}" th:object="${blog}" method="post">
     <input th:type="hidden" name="id" th:field="*{id}">
     <table>
         <tr>
@@ -24,8 +24,21 @@
             <td><textarea th:field="*{content}"/></td>
         </tr>
         <tr>
+            <td>Category: </td>
+            <td>
+                <select th:field = "*{category.id}">
+                    <option th:each="category: ${categoryList}"
+                            th:value="${category.id}" th:text="${category.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Date: </td>
+            <td><input type="date" th:field="*{dateCreated}"/></td>
+        </tr>
+        <tr>
             <td></td>
-            <td><input type="submit" value="Update blog"></td>
+            <td><input type="submit" value="Update Blog"></td>
         </tr>
     </table>
 </form>
