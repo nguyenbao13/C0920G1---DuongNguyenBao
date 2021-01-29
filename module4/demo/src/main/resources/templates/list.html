@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+</head>
+<body>
+<div style="width: 77%; margin-left: 10%; height: 635px; border: hidden">
+    <div style="text-align: center;">
+        <h3>Customer List</h3>
+        <h5><a href="/customer/create" style="text-decoration: none">Add New Customer</a></h5>
+        <!--/*@thymesVar id="message" type="java"*/-->
+        <h5 style="color: green" th:if="${message}" th:text="${message}"></h5>
+    </div>
+    <div align="center">
+        <table border="1" cellpadding="5" id="tableCustomer" class="table table-striped table-bordered"
+               style="width: 100%">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Gender</th>
+                <th>ID Card</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Customer Type</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${}">
+                <td th:text="${product.customerId2}"></td>
+                <td th:text="$product.customerName}"></td>
+                <td th:text="${product.customerBirthday}"></td>
+                <td th:text="${product.customerGender}"></td>
+                <td th:text="${product.customerIdCard}"></td>
+                <td th:text="${product.customerPhone}"></td>
+                <td th:text="${product.customerEmail}"></td>
+                <td th:text="${product.customerAddress}"></td>
+                <td th:text="${product.customerType.customerTypeName}"></td>
+                <td>
+                    <a th:href="@{/product/edit/__${product.customerId}__}" style="text-decoration: none">Edit</a>
+                    <a th:href="@{productr/delete/__${product.customerId}__}" data-toggle="modal"
+                       data-target="#deleteModal"
+                       th:data-name="${product.customerName}"
+                       th:data-id="${product.customerId}"
+                       class="deleteId"
+                       style="text-decoration: none; color: red">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!--Phân trang-->
+        <div class="float-right">
+            <a th:href="@{'/customer'(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}"
+               class="btn btn-outline-info">Previous</a>
+            <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+            <a th:href="@{'/customer'(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}"
+               class="btn btn-outline-info">Next</a>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

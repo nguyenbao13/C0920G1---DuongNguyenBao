@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{home :: head}"></head>
+<body>
+<header th:replace="/home :: header"></header>
+<!--body-->
+<div style="position: relative; top: 170px">
+    <!--Body left-->
+    <div th:replace="/home :: bodyleft"></div>
+    <!--Body right-->
+    <div style="width: 77%; margin-left: 23%; height: 635px; border: hidden">
+        <div style="text-align: center;">
+            <h3>Customer List</h3>
+            <h5><a href="/customer/create" style="text-decoration: none">Add New Customer</a></h5>
+            <!--/*@thymesVar id="message" type="java"*/-->
+            <h5 style="color: green" th:if="${message}" th:text="${message}"></h5>
+        </div>
+        <div align="center">
+            <table border="1" cellpadding="5" id="tableCustomer" class="table table-striped table-bordered"
+                   style="width: 100%">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Gender</th>
+                    <th>ID Card</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Customer Type</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="customer : ${customerList}">
+                    <td th:text="${customer.customerId2}"></td>
+                    <td th:text="${customer.customerName}"></td>
+                    <td th:text="${customer.customerBirthday}"></td>
+                    <td th:text="${customer.customerGender}"></td>
+                    <td th:text="${customer.customerIdCard}"></td>
+                    <td th:text="${customer.customerPhone}"></td>
+                    <td th:text="${customer.customerEmail}"></td>
+                    <td th:text="${customer.customerAddress}"></td>
+                    <td th:text="${customer.customerType.customerTypeName}"></td>
+                    <td>
+                        <a th:href="@{/customer/edit/__${customer.customerId}__}" style="text-decoration: none">Edit</a>
+                        <a th:href="@{/customer/delete/__${customer.customerId}__}" data-toggle="modal"
+                           data-target="#deleteModal"
+                           th:data-name="${customer.customerName}"
+                           th:data-id="${customer.customerId}"
+                           class="deleteId"
+                           style="text-decoration: none; color: red">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--Phân trang-->
+            <div class="float-right">
+                <a th:href="@{'/customer'(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}"
+                   class="btn btn-outline-info">Previous</a>
+                <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+                <a th:href="@{'/customer'(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}"
+                   class="btn btn-outline-info">Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/home :: footer"></footer>
+
+<!--Modal Delete-->
+<div class="modal fade" id="deleteModal" tabindex="-13" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">DELETE</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="customerName"></p>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-outline-danger" onclick="submitDelete()">Delete</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form id="deleteCustomer" th:action="@{/customer/delete}">
+    <input type="hidden" name="id_customer" id="id_customer">
+</form>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script>
+    function submitDelete() {
+        document.getElementById("deleteCustomer").submit();
+    }
+
+    // function deleteCustomerId(id, name) {
+    //     console.log("Da vao day: " + id + " - " + name);
+    //     document.getElementById('modelId').innerText = 'Are you sure to delete customer ' + name + ' ?';
+    //     document.getElementById('id_customer').value = id;
+    // }
+    $(".deleteId").click(function () {
+        let id = $(this).attr("data-id");
+        let name = $(this).attr("data-name");
+        document.getElementById("customerName").innerText = name;
+        document.getElementById('id_customer').value = id;
+    })
+</script>
+</body>
+</html>

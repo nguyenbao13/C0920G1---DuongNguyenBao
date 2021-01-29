@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="servlet-api-2.5-6.0.2">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../softs/JDBC lib/servlet-api-2.5-6.0.2.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

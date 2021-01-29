@@ -1,7 +1,6 @@
 package com.codegym.controller;
 
 import com.codegym.entity.Blog;
-import com.codegym.entity.Category;
 import com.codegym.service.BlogService;
 import com.codegym.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

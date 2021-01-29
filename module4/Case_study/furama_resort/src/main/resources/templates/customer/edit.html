@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{home :: head}"></head>
+<body>
+<header th:replace="/home :: header"></header>
+<!--body-->
+<div style="position: relative; top: 170px">
+    <!--Body left-->
+    <div th:replace="/home :: bodyleft"></div>
+    <!--Body right-->
+    <div style="width: 77%; margin-left: 23%; height: 635px; border: hidden">
+        <div style="text-align: center">
+            <h3>Edit Customer</h3>
+            <h5><a th:href="@{/customer}" style="text-decoration: none">Customer List</a></h5>
+        </div>
+        <div align="center">
+            <form action="/customer/update" th:object="${customer}" method="post">
+                <table border="1" cellpadding="5" id="tableCustomer" class="table table-striped table-bordered"
+                       style="width: 50%">
+                    <input type="hidden" th:field="*{customerId}"/>
+                    <tr>
+                        <td>ID: </td>
+                        <td th:field="*{customerId2}" th:text="*{customerId2}"></td>
+                    </tr>
+                    <tr>
+                        <td>Name: </td>
+                        <td><input type="text" th:field="*{customerName}" th:text="*{customerName}"/></td>
+                    </tr>
+                    <tr>
+                        <td>Birthday: </td>
+                        <td><input type="date" th:field="*{customerBirthday}"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender: </td>
+                        <td>
+                            <select th:field="*{customerGender}">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ID Card: </td>
+                        <td><input type="text" th:field="*{customerIdCard}"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone: </td>
+                        <td><input type="text" th:field="*{customerPhone}"></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input type="text" th:field="*{customerEmail}"></td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
+                        <td><input type="text" th:field="*{customerAddress}"></td>
+                    </tr>
+                    <tr>
+                        <td>Customer type: </td>
+                        <td >
+                            <select th:field="*{customerType}">
+                                <option th:each="customerType: ${customerTypeList}"
+                                        th:value="${customerType.getCustomerTypeId()}"
+                                        th:text="${customerType.getCustomerTypeName()}">
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" value="Update Customer" class="btn btn-info">
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="/home :: footer"></footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
