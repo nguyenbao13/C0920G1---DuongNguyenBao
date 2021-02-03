@@ -14,8 +14,8 @@
 <body>
 <div style="width: 77%; margin-left: 10%; height: 635px; border: hidden">
     <div style="text-align: center;">
-        <h3>Customer List</h3>
-        <h5><a href="/customer/create" style="text-decoration: none">Add New Customer</a></h5>
+        <h3>Question List</h3>
+        <h5><a href="/question/create" class="btn btn-info">Add New Question</a></h5>
         <!--/*@thymesVar id="message" type="java"*/-->
         <h5 style="color: green" th:if="${message}" th:text="${message}"></h5>
     </div>
@@ -25,50 +25,69 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Birthday</th>
-                <th>Gender</th>
-                <th>ID Card</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Customer Type</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Date of Created</th>
+<!--                <th>Creator</th>-->
+<!--                <th>Answerer</th>-->
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="product : ${}">
-                <td th:text="${product.customerId2}"></td>
-                <td th:text="$product.customerName}"></td>
-                <td th:text="${product.customerBirthday}"></td>
-                <td th:text="${product.customerGender}"></td>
-                <td th:text="${product.customerIdCard}"></td>
-                <td th:text="${product.customerPhone}"></td>
-                <td th:text="${product.customerEmail}"></td>
-                <td th:text="${product.customerAddress}"></td>
-                <td th:text="${product.customerType.customerTypeName}"></td>
+            <tr th:each="question : ${questionList}">
+                <td th:text="${question.questionId}"></td>
+                <td th:text="${question.title}"></td>
+                <td th:text="${question.questionType.name}"></td>
+                <td th:text="${question.dateCreated}"></td>
+<!--                <td th:text="${question.user.userCreate}"></td>-->
+<!--                <td th:text="${question.user.userFeedback}"></td>-->
+                <td th:text="${question.status}"></td>
                 <td>
-                    <a th:href="@{/product/edit/__${product.customerId}__}" style="text-decoration: none">Edit</a>
-                    <a th:href="@{productr/delete/__${product.customerId}__}" data-toggle="modal"
+                    <a th:href="@{/question/edit/__${question.questionId}__}" class="btn btn-primary btn-sm">Edit</a>
+                    <a th:href="@{/question/delete/__${question.questionId}__}" data-toggle="modal"
                        data-target="#deleteModal"
-                       th:data-name="${product.customerName}"
-                       th:data-id="${product.customerId}"
-                       class="deleteId"
-                       style="text-decoration: none; color: red">Delete</a>
+                       th:data-name="${question.title}"
+                       th:data-id="${question.questionId}"
+                       class="deleteId btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
             </tbody>
         </table>
         <!--Phân trang-->
         <div class="float-right">
-            <a th:href="@{'/customer'(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}"
+            <a th:href="@{'/question'(page=${questionList.number - 1})}" th:if="${questionList.hasPrevious()}"
                class="btn btn-outline-info">Previous</a>
-            <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
-            <a th:href="@{'/customer'(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}"
+            <span th:text="${questionList.number + 1}"></span>/<span th:text="${questionList.totalPages}"></span>
+            <a th:href="@{'/question'(page=${questionList.number + 1})}" th:if="${questionList.hasNext()}"
                class="btn btn-outline-info">Next</a>
         </div>
     </div>
 </div>
+<!--Modal Delete-->
+<div class="modal fade" id="deleteModal" tabindex="-13" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Question</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="title"></p>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-outline-danger" onclick="submitDelete()">Delete</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form id="deleteQuestion" th:action="@{/question/delete}">
+    <input type="hidden" name="id_question" id="id_question">
+</form>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -78,5 +97,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<!--Script delete-->
+<script>
+    function submitDelete() {
+        document.getElementById("deleteQuestion").submit();
+    }
+    $(".deleteId").click(function () {
+        let id = $(this).attr("data-id");
+        let name = $(this).attr("data-name");
+        document.getElementById("title").innerText = "Are you sure you want to delete "+name+" ?";
+        document.getElementById('id_question').value = id;
+    })
+</script>
 </body>
 </html>

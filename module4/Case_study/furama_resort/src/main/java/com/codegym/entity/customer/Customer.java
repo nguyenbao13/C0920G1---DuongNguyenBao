@@ -2,6 +2,8 @@ package com.codegym.entity.customer;
 
 import com.codegym.entity.contract.Contract;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -11,7 +13,7 @@ import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
-public class Customer {
+public class Customer implements Validator {
     @Id
     @Column(name = "customer_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +23,8 @@ public class Customer {
     private String customerId2;
 
     @Column(name = "customer_name")
-    @Pattern(regexp = "([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$", message = "Name invalid !")
+    @Pattern(regexp = "([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$",
+            message = "Name invalid ! Each word begins with an uppercase and 2 characters minimize length.")
     private String customerName;
 
     @Column(name = "customer_birthday")
@@ -32,15 +35,15 @@ public class Customer {
     private String customerGender;
 
     @Column(name = "customer_id_card")
-    @Pattern(regexp = "^\\d{9}|\\d{12}$", message = "ID card number invalid ! Format 'XXXXXXXXX' or 'XXXXXXXXXXXX'")
+    @Pattern(regexp = "^\\d{9}|\\d{12}$", message = "ID card number invalid ! Format 'XXXXXXXXX' or 'XXXXXXXXXXXX'.")
     private String customerIdCard;
 
     @Column(name = "customer_phone")
-    @Pattern(regexp = "^(\\+84|0)(90|91)\\d{7}$", message = "Phone number invalid ! Format '090/091XXXXXXX'")
+    @Pattern(regexp = "^(\\+84|0)(90|91)\\d{7}$", message = "Phone number invalid ! Format '090/091XXXXXXX'.")
     private String customerPhone;
 
     @Column(name = "customer_email")
-    @Email
+    @Pattern(regexp = "^\\w{2,}@[a-z]{2,}(\\.[a-z]{2,})+$", message = "Email invalid ! Format 'abc@abc.abc'.")
     private String customerEmail;
 
     @Column(name = "customer_address")
@@ -142,5 +145,15 @@ public class Customer {
 
     public void setContractList(List<Contract> contractList) {
         this.contractList = contractList;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+
     }
 }

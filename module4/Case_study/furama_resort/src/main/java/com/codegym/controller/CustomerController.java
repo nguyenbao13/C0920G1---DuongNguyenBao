@@ -51,7 +51,8 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public String saveCustomer(@Valid @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+    public String saveCustomer(@Valid @ModelAttribute Customer customer, BindingResult bindingResult,
+                               RedirectAttributes redirectAttributes, Model model) {
         if(bindingResult.hasFieldErrors()) {
             List<CustomerType> customerTypeList = customerTypeService.findAll();
             model.addAttribute("customerTypeList", customerTypeList);
@@ -73,10 +74,18 @@ public class CustomerController {
     }
 
     @PostMapping("/update")
-    public String updateCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes) {
-        customerService.save(customer);
-        redirectAttributes.addFlashAttribute("message", "Updated successfully !");
-        return "redirect:/customer/";
+    public String updateCustomer(@Valid @ModelAttribute Customer customer, BindingResult bindingResult,
+                                 RedirectAttributes redirectAttributes, Model model) {
+        if(bindingResult.hasFieldErrors()) {
+            List<CustomerType> customerTypeList = customerTypeService.findAll();
+            model.addAttribute("customerTypeList", customerTypeList);
+            model.addAttribute("customer", customer);
+            return "customer/edit";
+        } else {
+            customerService.save(customer);
+            redirectAttributes.addFlashAttribute("message", "Updated successfully !");
+            return "redirect:/customer/";
+        }
     }
 
     @GetMapping("/delete")

@@ -2,6 +2,48 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{home :: head}"></head>
 <body>
+<style>
+    /* Tooltip container */
+    .edit, .deleteId {
+        position: relative;
+        display: inline-block;
+    }
+    /* Tooltip text */
+    .edit .editText, .deleteId .deleteText {
+        visibility: hidden;
+        width: 60px;
+        background-color: dimgray;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        /* Position the tooltip text */
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 130%;
+        margin-left: -60px;
+        /* Fade in tooltip */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    /*Mũi tên trỏ xuống cái nút*/
+    .edit .editText::after, .deleteId .deleteText::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: dimgray transparent transparent transparent;
+    }
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .edit:hover .editText, .deleteId:hover .deleteText {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
 <header th:replace="/home :: header"></header>
 <!--body-->
 <div style="position: relative; top: 170px">
@@ -11,7 +53,7 @@
     <div style="width: 77%; margin-left: 23%; height: 635px; border: hidden">
         <div style="text-align: center;">
             <h3>Customer List</h3>
-            <h5><a href="/customer/create" style="text-decoration: none">Add New Customer</a></h5>
+            <a href="/customer/create" class="btn btn-info" style="float: right"><i class="fas fa-plus"></i> New Customer</a>
             <!--/*@thymesVar id="message" type="java"*/-->
             <h5 style="color: green" th:if="${message}" th:text="${message}"></h5>
         </div>
@@ -28,7 +70,7 @@
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Address</th>
-                    <th>Customer Type</th>
+                    <th>Type</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -44,13 +86,14 @@
                     <td th:text="${customer.customerAddress}"></td>
                     <td th:text="${customer.customerType.customerTypeName}"></td>
                     <td>
-                        <a th:href="@{/customer/edit/__${customer.customerId}__}" style="text-decoration: none">Edit</a>
+                        <a th:href="@{/customer/edit/__${customer.customerId}__}" class="btn btn-sm btn-primary edit">
+                            <i class="fas fa-pen"></i><span class="editText">Edit</span></a>
                         <a th:href="@{/customer/delete/__${customer.customerId}__}" data-toggle="modal"
                            data-target="#deleteModal"
                            th:data-name="${customer.customerName}"
                            th:data-id="${customer.customerId}"
-                           class="deleteId"
-                           style="text-decoration: none; color: red">Delete</a>
+                           class="deleteId btn btn-sm btn-danger">
+                            <i class="fas fa-trash"></i><span class="deleteText">Delete</span></a>
                     </td>
                 </tr>
                 </tbody>
@@ -74,7 +117,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">DELETE</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -101,21 +144,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
+<!--Script delete-->
 <script>
     function submitDelete() {
         document.getElementById("deleteCustomer").submit();
     }
-
-    // function deleteCustomerId(id, name) {
-    //     console.log("Da vao day: " + id + " - " + name);
-    //     document.getElementById('modelId').innerText = 'Are you sure to delete customer ' + name + ' ?';
-    //     document.getElementById('id_customer').value = id;
-    // }
     $(".deleteId").click(function () {
         let id = $(this).attr("data-id");
         let name = $(this).attr("data-name");
-        document.getElementById("customerName").innerText = name;
+        document.getElementById("customerName").innerText = "Are you sure you want to delete "+name+" ?";
         document.getElementById('id_customer').value = id;
     })
 </script>
