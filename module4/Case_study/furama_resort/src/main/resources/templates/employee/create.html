@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{home :: head}"></head>
+<body>
+<header th:replace="/home :: header"></header>
+<!--body-->
+<div style="position: relative; top: 170px">
+    <!--Body left-->
+    <div th:replace="/home :: bodyleft"></div>
+    <!--Body right-->
+    <div style="width: 77%; margin-left: 23%; height: 635px; border: hidden;">
+        <h3 style="text-align: center;">Create Employee</h3>
+        <div align="center">
+            <form action="/employee/create"  method="post">
+                <input type="hidden" />
+                <table border="1" cellpadding="5" id="tableCustomer" class="table table-striped table-bordered"
+                       style="width: 25%">
+                    <tr>
+                        <td>Name: </td>
+                        <td><input type="text" />
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>Birthday: </td>
+                        <td><input type="date" >
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>ID Card: </td>
+                        <td><input type="text" >
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>Salary: </td>
+                        <td><input type="text" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Phone: </td>
+                        <td><input type="text" >
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input type="text" >
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
+                        <td><input type="text" ></td>
+                    </tr>
+                </table>
+                <input type="submit" value="Create Employee" class="btn btn-info">
+            </form>
+            <a th:href="@{/employee}" class="btn btn-secondary"
+               style="position: relative; bottom: 38px; left: 150px">Back to the list</a>
+        </div>
+    </div>
+</div>
+<footer th:replace="/home :: footer"></footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
