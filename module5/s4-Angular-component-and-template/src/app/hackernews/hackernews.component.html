@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<!-- <textarea [(ngModel)]="article.title" cols="70"></textarea>
+<textarea [(ngModel)]="article.url" cols="70"></textarea> -->
+<!-- <textarea [value]="article.title" cols="70" id="article-title"></textarea>
+<textarea [value]="article.url" cols="70" id="article-url"></textarea>
+<input (click)="updateArticle()" type="button" value="Update"> -->
+<br>
+<ul style="list-style-type:none;">
+    <li *ngFor="let art of article; index as i">
+        {{i+1}}. <a href="{{art.url}}" target="_blank">{{art.title}}</a>
+        &nbsp;&nbsp;
+        <app-likes></app-likes>
+    </li>
+</ul>
+<div style="margin-left: 40px;">
+    <h5>Add New Article</h5>
+    <p><b>Title:</b></p>
+    <input (change)="getValueTitle($event.target.value)" cols="70">
+    <p><b>URL:</b></p>
+    <input (change)="getValueUrl($event.target.value)" cols="70">
+    <br><br>
+    <button (click)="addArticle()" class="btn btn-info btn-sm">Add</button>
+</div>
+<app-footer></app-footer>
