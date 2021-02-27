@@ -1,0 +1,36 @@
+{
+    "customer": [
+        {
+            "id": 1,
+            "name": "bao",
+            "birthday": "1/1/1996",
+            "gender": "Male",
+            "idCard": "123456789",
+            "Phone": "123456789",
+            "Email": "bao@gmail.com",
+            "Address": "123abc",
+            "Type": "Diamond"
+        },
+        {
+            "id": 1,
+            "name": "linh",
+            "birthday": "1/1/2000",
+            "gender": "Male",
+            "idCard": "123456789",
+            "Phone": "123456789",
+            "Email": "linh@gmail.com",
+            "Address": "123abc",
+            "Type": "Gold"
+        }
+    ],
+    "employee": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "service": {
+        "name": "typicode"
+    }
+}

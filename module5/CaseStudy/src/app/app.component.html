@@ -1,1 +1,71 @@
-<app-header></app-header>
+<div style="height: 100vh;">
+    <div style="width: 100%; font-family: 'Comic Sans MS';">
+        <nav class="navbar navbar-light" style="background-color: white;">
+            <a class="navbar-brand" [routerLink]="['home-page']" style="margin-left: 5%">
+                <img src="http://www.dongkhoitravel.com.vn/upload/product/furamresort-3272.png" width="190" height="85"
+                    alt="logo-link">
+            </a>
+            <ul style="list-style-type: none; font-size: smaller; margin-left: -10%;">
+                <li style="padding-top: 13px;"><i class="fas fa-map-marker-alt" style="color: cadetblue"></i>
+                    103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</li>
+                <li style="padding-top: 5px;"><i class="fas fa-phone" style="color: cadetblue"></i> 84-236-3847 333/888
+                </li>
+                <li style="padding-top: 5px;"><i class="fas fa-envelope" style="color: cadetblue"></i>
+                    reservation@furamavietnam.com</li>
+            </ul>
+            <p style="font-size: 25px; margin-right: 5%; color: cadetblue">DNB's</p>
+        </nav>
+    </div>
+    <!--Header links-->
+    <div style="position: sticky; top: 0; font-family: 'Comic Sans MS'; z-index: +20;">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: cadetblue;">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto" style="margin-left: 5%">
+                    <li class="nav-item active mr-5">
+                        <a class="nav-link" [routerLink]="['home-page']">Home</a>
+                    </li>
+                    <li class="nav-item active mr-5">
+                        <a class="nav-link" [routerLink]="['list-employee']">Employee</a>
+                    </li>
+                    <li class="nav-item active mr-5">
+                        <a class="nav-link" [routerLink]="['list-customer']">Customer</a>
+                    </li>
+                    <li class="nav-item active mr-5">
+                        <a class="nav-link" [routerLink]="['list-service']">Service</a>
+                    </li>
+                    <li class="nav-item active mr-5">
+                        <a class="nav-link" [routerLink]="['list-contract']">Contract</a>
+                    </li>
+                </ul>
+                <!-- Search form -->
+                <form class="form-inline my-2 my-lg-0" style="margin-right: 5%;">
+                    <div class="input-group mb-0">
+                        <div class="input-group-prepend">
+                            <button class="btn" type="submit"
+                                style="border-radius: 20px 0px 0px 20px; background-color: white;">
+                                <i class="fas fa-search" style="color: cadetblue"></i></button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search"
+                            style="border-radius: 0px 20px 20px 0px" name="search">
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
+    <div style="width: 100%; background-color: #ADDCCF; font-family: 'Comic Sans MS';">
+        <div style="padding: 15px;" class="d-flex justify-content-center">
+            <img src="../../assets/logo.png" style="width: 30px;">
+            <a href="https://www.facebook.com/furamaresort/" style="margin-left: 40px">
+                <i class="fab fa-facebook fa-2x" style="color: darkslategrey"></i></a>
+            <a href="https://www.instagram.com/furama_resort_danang/?hl=vi" style="margin-left: 40px">
+                <i class="fab fa-instagram fa-2x" style="color: darkslategrey"></i></a>
+            <a href="https://www.tripadvisor.com/Hotel_Review-g298085-d302750-Reviews-Furama_Resort_Danang-Da_Nang.html"
+                style="margin-left: 40px">
+                <i class="fab fa-tripadvisor fa-2x" style="color: darkslategrey"></i></a>
+        </div>
+        <p class="d-flex justify-content-center"
+            style="color: white; background-color: cadetblue; padding: 4px; font-size: small;">© 2021 Furama Resort Danang.
+        </p>
+    </div>
+</div>

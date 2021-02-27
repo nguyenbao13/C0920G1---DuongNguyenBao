@@ -6,10 +6,11 @@
     "CaseStudy": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:class": {
+        "@schematics/angular:component": {
+          "style": "scss",
           "skipTests": true
         },
-        "@schematics/angular:component": {
+        "@schematics/angular:class": {
           "skipTests": true
         },
         "@schematics/angular:directive": {
@@ -49,7 +50,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -113,7 +114,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -148,6 +149,6 @@
   },
   "defaultProject": "CaseStudy",
   "cli": {
-    "analytics": "799a544d-9aed-43cb-a38f-a68151ee691f"
+    "analytics": "87a53d53-2f19-4874-8393-5b0aac266e43"
   }
 }
