@@ -4,6 +4,10 @@ import { CreateCustomerComponent } from './components/customer/create-customer/c
 import { ListCustomerComponent } from './components/customer/list-customer/list-customer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home-page', pathMatch: 'full' },
@@ -15,7 +19,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [CreateCustomerComponent, ListCustomerComponent, HomePageComponent, PageNotFoundComponent],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    CommonModule,
+    ReactiveFormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
