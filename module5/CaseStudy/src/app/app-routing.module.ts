@@ -1,3 +1,4 @@
+import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CreateCustomerComponent } from './components/customer/create-customer/create-customer.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    // MaterialModule
   ],
   exports: [RouterModule]
 })

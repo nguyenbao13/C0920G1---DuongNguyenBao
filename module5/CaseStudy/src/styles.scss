@@ -29,3 +29,4 @@ $CaseStudy-theme: mat-light-theme($CaseStudy-primary, $CaseStudy-accent, $CaseSt
 @import '~bootstrap/scss/bootstrap';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';

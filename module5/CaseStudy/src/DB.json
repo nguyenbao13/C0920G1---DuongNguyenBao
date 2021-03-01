@@ -120,6 +120,28 @@
       "address": "46346",
       "type": "Member",
       "id": 11
+    },
+    {
+      "name": "khoa",
+      "birthday": "2021-02-03",
+      "gender": "Male",
+      "idCard": "464563454",
+      "phone": "0907654321",
+      "email": "abc@gmail.com",
+      "address": "hhhh",
+      "type": "Diamond",
+      "id": 12
+    },
+    {
+      "name": "anh",
+      "birthday": "2021-02-11",
+      "gender": "Female",
+      "idCard": "546456566",
+      "phone": "0907654321",
+      "email": "abc@gmail.com",
+      "address": "123",
+      "type": "Silver",
+      "id": 13
     }
   ],
   "employee": [

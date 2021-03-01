@@ -17,14 +17,14 @@ export class CreateCustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.formCreateCustomer = this.formBuilder.group({
-      name: [''],
-      birthday: [''],
-      gender: [''],
-      idCard: [''],
-      phone: [''],
-      email: [''],
-      address: [''],
-      type: [''],
+      name: ['', [Validators.required]],
+      birthday: ['', [Validators.required]],
+      gender: ['', [Validators.required]],
+      idCard: ['', [Validators.required, Validators.pattern('^[0-9]{9}$')]],
+      phone: ['', [Validators.required, Validators.pattern('^(0|\\(84\\)\\+)9[01][0-9]{7}$')]],
+      email: ['', [Validators.required, Validators.email]],
+      address: ['', [Validators.required]],
+      type: ['', [Validators.required]],
     })
   }
 
