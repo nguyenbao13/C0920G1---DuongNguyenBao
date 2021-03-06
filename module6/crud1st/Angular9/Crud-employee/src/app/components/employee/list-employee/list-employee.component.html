@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center"
+    style="width: 100%; height: 794px; font-family: 'Comic Sans MS';">
+    <div style="text-align: center; margin-top: 3%; width: 80%;">
+        <h3>Employee List</h3>
+        <a class="btn btn-info btn-outline-light rounded-pill" style="float: right;" [routerLink]="['/create-employee']"><i
+                class="fas fa-plus"></i> New Employee</a>
+        <h5 style="color: green" th:if="${message}" th:text="${message}"></h5>
+        <table id="tableCustomer" class="table table-bordered table-hover" style="margin-top: 5%;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <!-- <th>Birthday</th>
+                    <th>Gender</th>
+                    <th>ID Card</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Type</th>
+                    <th>Actions</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeeList">
+                    <!-- |filter:term | paginate: { itemsPerPage: 5, currentPage: p }-->
+                    <td>{{employee.employeeId}}</td>
+                    <td>{{employee.employeeName}}</td>
+                    <!-- <td>{{customer.birthday}}</td>
+                    <td>{{customer.gender}}</td>
+                    <td>{{customer.idCard}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>{{customer.type}}</td> -->
+                    <td>
+                        <a [routerLink]="['/edit-employee/' + employee.id]" class="btn btn-sm btn-primary edit"
+                            data-toggle="tooltip" title="Edit">
+                            <i class="fas fa-pen"></i></a>
+                        <!-- &nbsp;
+                        <a (click)= openDialog(customer.id) class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete">
+                            <i class="fas fa-trash"></i></a> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+    </div>
+</div>

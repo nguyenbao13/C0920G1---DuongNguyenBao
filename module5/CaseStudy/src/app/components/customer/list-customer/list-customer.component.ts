@@ -1,4 +1,6 @@
+import { DeleteCustomerComponent } from './../delete-customer/delete-customer.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { CustomerService } from '../../../services/customer.service'
 @Component({
   selector: 'app-list-customer',
@@ -7,10 +9,12 @@ import { CustomerService } from '../../../services/customer.service'
 })
 export class ListCustomerComponent implements OnInit {
   public customers;
-  p: number = 1; //Pagination
+  public p: number = 1; //Pagination
+  
 
   constructor(
-    public customerService: CustomerService
+    public customerService: CustomerService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -19,4 +23,18 @@ export class ListCustomerComponent implements OnInit {
     })
   }
 
+  openDialog(id): void {
+    this.customerService.getCustomerById(id).subscribe(result => {
+      const dialogRef = this.dialog.open(DeleteCustomerComponent, {
+        width: '500px',
+        data: {data1: result},
+        disableClose: true
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        this.ngOnInit();
+      });
+    })
+  
+  }
 }

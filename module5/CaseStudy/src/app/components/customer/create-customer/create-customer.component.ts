@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-customer.component.scss']
 })
 export class CreateCustomerComponent implements OnInit {
-  public formCreateCustomer: FormGroup
+  public formCreateCustomer: FormGroup;
+  public maxDate = new Date();
+  public minDate = new Date(1900,0,1);
 
   constructor(
     public formBuilder: FormBuilder,

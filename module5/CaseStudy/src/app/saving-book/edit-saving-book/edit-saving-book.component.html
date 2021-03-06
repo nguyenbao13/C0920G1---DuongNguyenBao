@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-center"
+    style="width: 100%; height: 794px; font-family: 'Comic Sans MS'; background-image: url('../../../../assets/beach-blur.jpg'); background-repeat: no-repeat; background-size: 100% auto;">
+    <div style="width: 30%; margin-top: 3%;" align="center">
+        <h3>Edit Saving Book</h3>
+        <form [formGroup]="formEditSavingBook">
+            <!-- <input type="hidden" th:field="*{customerId}" />
+            <input type="hidden" th:field="*{customerId2}" /> -->
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Customer' name: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="nameCustomer">
+                            <!-- <p *ngIf="formEditSavingBook.controls.nameCustomer.errors?.required && formEditSavingBook.controls.nameCustomer.touched"
+                                class="text-danger">Please fill the Name !</p>
+                            <p *ngIf="formEditSavingBook.controls.nameCustomer.errors?.pattern"
+                                class="text-danger">The Name can't have number character !</p> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Opening Date: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="date" formControlName="openDate">
+                            <p *ngIf="formEditSavingBook.controls.openDate.errors?.required && formEditSavingBook.controls.openDate.touched"
+                                class="text-danger">Please fill the openDate !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Starting Date: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="date" formControlName="startDate">
+                            <p *ngIf="formEditSavingBook.controls.startDate.errors?.required && formEditSavingBook.controls.startDate.touched"
+                                class="text-danger">Please fill the startDate !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Term: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="term">
+                            <p *ngIf="formEditSavingBook.controls.term.errors?.required && formEditSavingBook.controls.term.touched"
+                                class="text-danger">Please fill the Term !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Amount: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="amount">
+                            <p *ngIf="formEditSavingBook.controls.amount.errors?.required && formEditSavingBook.controls.amount.touched"
+                                class="text-danger">Please fill the Amount !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Interest: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="interest">
+                            <p *ngIf="formEditSavingBook.controls.interest.errors?.required && formEditSavingBook.controls.interest.touched"
+                                class="text-danger">Please fill the Interest !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Bonus: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="bonus">
+                            <p *ngIf="formEditSavingBook.controls.bonus.errors?.required && formEditSavingBook.controls.bonus.touched"
+                                class="text-danger">Please fill the Bonus !</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button  (click)="editSavingBook()" class="btn btn-info"
+                [routerLink]="['/list-saving-book']">Save</button>
+        </form>
+        <a [routerLink]="['/list-saving-book']" class="btn btn-secondary"
+            style="position: relative; bottom: 38px; left: 150px; color: white;">Back to the list</a>
+    </div>
+    <!-- <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+</div>

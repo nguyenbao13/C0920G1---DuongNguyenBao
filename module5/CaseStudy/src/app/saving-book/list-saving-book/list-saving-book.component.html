@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center"
+    style="width: 100%; height: 794px; font-family: 'Comic Sans MS'; 
+    background-image: url('../../../../assets/beach-blur.jpg'); background-repeat: no-repeat; background-size: 100% auto;">
+    <div style="text-align: center; margin-top: 3%; width: 80%;">
+        <h3>Saving Books List</h3>
+        <table id="tablesavingBook" class="table table-bordered table-hover" style="margin-top: 5%;">
+            <thead>
+                <tr>
+                    <!-- "id": 2,
+      "idsavingBook": 2,
+      "namesavingBook": "Doan Phuoc Trung",
+      "openDate": "2020/01/01",
+      "startDate": "2020/01/0",
+      "term": "6 months",
+      "amount": 200000000,
+      "interest": "8%/year",
+      "bonus": "Rain Cover" -->
+                    <th>ID</th>
+                    <th>Customer's ID</th>
+                    <th>Customer's name</th>
+                    <th>Opening Date</th>
+                    <th>Starting Date</th>
+                    <th>Term</th>
+                    <th>Amount</th>
+                    <th>Interest</th>
+                    <th>Bonus</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let savingBook of savingBooks | paginate: { itemsPerPage: 5, currentPage: p }">
+                    <!-- |filter:term -->
+                    <td>{{savingBook.id}}</td>
+                    <td>{{savingBook.idCustomer}}</td>
+                    <td>{{savingBook.nameCustomer}}</td>
+                    <td>{{savingBook.openDate}}</td>
+                    <td>{{savingBook.startDate}}</td>
+                    <td>{{savingBook.term}}</td>
+                    <td>{{savingBook.amount}}</td>
+                    <td>{{savingBook.interest}}</td>
+                    <td>{{savingBook.bonus}}</td>
+                    <td>
+                        <a [routerLink]="['/edit-saving-book/'+savingBook.id]" class="btn btn-sm btn-primary edit"
+                            data-toggle="tooltip" title="Edit">
+                            <i class="fas fa-pen"></i></a>
+                        &nbsp;
+                        <!-- <a (click)= openDialog(savingBook.id) class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete">
+                            <i class="fas fa-trash"></i></a> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<!--Pagination customize button-->
+        <!-- <div class="d-flex justify-content-center">
+            <a th:href="@{'/savingBook'(page=${savingBookList.number - 1})}" th:if="${savingBookList.hasPrevious()}"
+                class="btn btn-info rounded-circle" data-toggle="tooltip" title="Previous"><i
+                    class="fas fa-chevron-left fa-lg"></i></a>
+            &nbsp;
+            <span th:text="${savingBookList.number + 1}"></span>/<span th:text="${savingBookList.totalPages}"></span>
+            &nbsp;
+            <a th:href="@{'/savingBook'(page=${savingBookList.number + 1})}" th:if="${savingBookList.hasNext()}"
+                class="btn btn-info rounded-circle" data-toggle="tooltip" title="Next"><i
+                    class="fas fa-chevron-right fa-lg"></i></a>
+        </div> -->

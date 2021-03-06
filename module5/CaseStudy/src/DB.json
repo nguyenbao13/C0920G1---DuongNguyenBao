@@ -1,47 +1,36 @@
 {
   "customer": [
     {
-      "id": 1,
-      "name": "bao",
-      "birthday": "01/01/1996",
-      "gender": "Male",
-      "idCard": "123456789",
-      "phone": "123456789",
-      "email": "bao@gmail.com",
-      "address": "123abc",
-      "type": "Diamond"
-    },
-    {
-      "id": 2,
       "name": "linh",
-      "birthday": "01/01/2000",
+      "birthday": "2016-06-05T17:00:00.000Z",
       "gender": "Male",
       "idCard": "123456789",
-      "phone": "123456789",
+      "phone": "(84)+911234567",
       "email": "linh@gmail.com",
       "address": "123abc",
-      "type": "Gold"
+      "type": "Gold",
+      "id": 2
     },
     {
-      "id": 3,
       "name": "thinh",
-      "birthday": "01/01/2000",
+      "birthday": "2003-02-03T17:00:00.000Z",
       "gender": "Male",
       "idCard": "123456789",
-      "phone": "123456789",
-      "email": "linh@gmail.com",
-      "address": "123abc",
-      "type": "Platinum"
-    },
-    {
-      "name": "bao1",
-      "birthday": "05/05/1999",
-      "gender": "Female",
-      "idCard": "5464565465",
       "phone": "0907654321",
       "email": "abc@gmail.com",
       "address": "hhhh",
-      "type": "Silver",
+      "type": "Platinum",
+      "id": 3
+    },
+    {
+      "name": "tuan",
+      "birthday": "2021-02-09T17:00:00.000Z",
+      "gender": "Female",
+      "idCard": "546456547",
+      "phone": "0907654321",
+      "email": "abc@gmail.com",
+      "address": "hhhh",
+      "type": "Gold",
       "id": 4
     },
     {
@@ -133,25 +122,96 @@
       "id": 12
     },
     {
-      "name": "anh",
-      "birthday": "2021-02-11",
-      "gender": "Female",
-      "idCard": "546456566",
+      "name": "bao1",
+      "birthday": "2012-06-04T17:00:00.000Z",
+      "gender": "Male",
+      "idCard": "123456788",
       "phone": "0907654321",
       "email": "abc@gmail.com",
-      "address": "123",
-      "type": "Silver",
-      "id": 13
+      "address": "hhhh",
+      "type": "Platinum",
+      "id": 14
     }
   ],
-  "employee": [
+  "saving-book": [
+    {
+      "interest": "8%/year",
+      "bonus": "Rain Cover",
+      "nameCustomer": "Truong Tan Hai",
+      "openDate": "2021-03-18",
+      "startDate": "2021-03-26",
+      "term": "8 months",
+      "amount": 200000000,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "idCustomer": 2,
+      "nameCustomer": "Doan Phuoc Trung",
+      "openDate": "2020/01/01",
+      "startDate": "2020/01/0",
+      "term": "6 months",
+      "amount": 200000000,
+      "interest": "8%/year",
+      "bonus": "Rain Cover"
+    },
+    {
+      "id": 3,
+      "idCustomer": 3,
+      "nameCustomer": "Duong Nguyen Bao",
+      "openDate": "2020/01/01",
+      "startDate": "2020/01/0",
+      "term": "6 months",
+      "amount": 200000000,
+      "interest": "8%/year",
+      "bonus": "Rain Cover"
+    },
+    {
+      "id": 4,
+      "idCustomer": 4,
+      "nameCustomer": "Duong Nguyen Bao",
+      "openDate": "2020/01/01",
+      "startDate": "2020/01/0",
+      "term": "6 months",
+      "amount": 200000000,
+      "interest": "8%/year",
+      "bonus": "Rain Cover"
+    },
+    {
+      "id": 5,
+      "idCustomer": 5,
+      "nameCustomer": "Duong Nguyen Bao",
+      "openDate": "2020/01/01",
+      "startDate": "2020/01/0",
+      "term": "6 months",
+      "amount": 200000000,
+      "interest": "8%/year",
+      "bonus": "Rain Cover"
+    },
+    {
+      "id": 6,
+      "idCustomer": 6,
+      "nameCustomer": "Duong Nguyen Bao",
+      "openDate": "2020/01/01",
+      "startDate": "2020/01/0",
+      "term": "6 months",
+      "amount": 200000000,
+      "interest": "8%/year",
+      "bonus": "Rain Cover"
+    }
+  ],
+  "customer1": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Truong Tan Hai"
+    },
+    {
+      "id": 2,
+      "name": "Doan Phuoc Trung"
+    },
+    {
+      "id": 3,
+      "name": "Duong Nguyen Bao"
     }
-  ],
-  "service": {
-    "name": "typicode"
-  }
+  ]
 }

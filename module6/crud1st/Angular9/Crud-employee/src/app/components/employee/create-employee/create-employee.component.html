@@ -1,0 +1,109 @@
+<div class="d-flex justify-content-center"
+    style="width: 100%; height: 794px; font-family: 'Comic Sans MS';">
+    <div style="width: 30%; margin-top: 3%;" align="center">
+        <h3>New Employee</h3>
+        <form [formGroup]="formCreateEmployee">
+            <!-- <input type="hidden" th:field="*{EmployeeId}" />
+            <input type="hidden" th:field="*{EmployeeId2}" /> -->
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Name: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="employeeName">
+                            <!-- <p *ngIf="formCreateEmployee.controls.name.errors?.required && formCreateEmployee.controls.name.touched"
+                                class="text-danger">Please fill the Name !</p> -->
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <th scope="row">2</th>
+                        <td>Birthday: </td>
+                        <td class="form-group">
+                            <mat-form-field>
+                                <input [max]="maxDate" [min]="minDate" class="form-control form-control-sm" formControlName="birthday" matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                            <p *ngIf="formCreateEmployee.controls.birthday.errors?.required && formCreateEmployee.controls.birthday.touched"
+                                class="text-danger">Please fill the Birthday !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Gender: </td>
+                        <td class="form-group">
+                            <select class="form-control form-control-sm" formControlName="gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <p *ngIf="formCreateEmployee.controls.gender.errors?.required && formCreateEmployee.controls.gender.touched"
+                                class="text-danger">Please fill the Gender !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>ID Card: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="idCard">
+                            <p *ngIf="formCreateEmployee.controls.idCard.errors?.required && formCreateEmployee.controls.idCard.touched"
+                                class="text-danger">Please fill the ID Card !</p>
+                            <p *ngIf="formCreateEmployee.controls.idCard.errors?.pattern" class="text-danger">The ID
+                                Card must be number formatting XXXXXXXXX !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Phone: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="phone">
+                            <p *ngIf="formCreateEmployee.controls.phone.errors?.required && formCreateEmployee.controls.phone.touched"
+                                class="text-danger">Please fill the Phone !</p>
+                            <p *ngIf="formCreateEmployee.controls.phone.errors?.pattern" class="text-danger">The Phone
+                                must be 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Email: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="email" formControlName="email">
+                            <p *ngIf="formCreateEmployee.controls.email.errors?.required && formCreateEmployee.controls.email.touched"
+                                class="text-danger">Please fill the Email !</p>
+                            <p *ngIf="formCreateEmployee.controls.email.errors?.email" class="text-danger">The Email is
+                                not valid !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Address: </td>
+                        <td class="form-group">
+                            <input class="form-control form-control-sm" type="text" formControlName="address">
+                            <p *ngIf="formCreateEmployee.controls.address.errors?.required && formCreateEmployee.controls.address.touched"
+                                class="text-danger">Please fill the Address !</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Type: </td>
+                        <td class="form-group">
+                            <select class="form-control form-control-sm" formControlName="type">
+                                <option value="Diamond">Diamond</option>
+                                <option value="Platinum">Platinum</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Silver">Silver</option>
+                                <option value="Member">Member</option>
+                            </select>
+                            <p *ngIf="formCreateEmployee.controls.type.errors?.required && formCreateEmployee.controls.type.touched"
+                                class="text-danger">Please fill the Type !</p>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <button [disabled]="formCreateEmployee.invalid" (click)="createEmployee()" class="btn btn-info">Create</button>
+        </form>
+        <a [routerLink]="['/employee']" class="btn btn-secondary"
+            style="position: relative; bottom: 38px; left: 150px; color: white;">Back to the list</a>
+    </div>
+</div>
