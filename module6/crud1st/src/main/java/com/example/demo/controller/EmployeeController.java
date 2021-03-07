@@ -51,14 +51,14 @@ public class EmployeeController {
     }
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseBody
-    public ResponseEntity<Employee> edit(@RequestBody Employee employee, @PathVariable String id) {
+    public ResponseEntity<Employee> edit(@RequestBody Employee employee, @PathVariable int id) {
+        employee.setEmployeeId(id);
         employeeService.save(employee);
         return new ResponseEntity<>(HttpStatus.OK);
     }
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseBody
     public ResponseEntity<Employee> save(@RequestBody Employee employee) {
-        System.out.println(employee.getEmployeeId());
         employeeService.save(employee);
         return new ResponseEntity<>(HttpStatus.OK);
     }

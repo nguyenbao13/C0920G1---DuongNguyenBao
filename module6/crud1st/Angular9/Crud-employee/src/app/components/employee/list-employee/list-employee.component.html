@@ -16,8 +16,8 @@
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Address</th>
-                    <th>Type</th>
-                    <th>Actions</th> -->
+                    <th>Type</th> -->
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,12 +33,12 @@
                     <td>{{customer.address}}</td>
                     <td>{{customer.type}}</td> -->
                     <td>
-                        <a [routerLink]="['/edit-employee/' + employee.id]" class="btn btn-sm btn-primary edit"
+                        <a [routerLink]="['/edit-employee/' + employee.employeeId]" class="btn btn-sm btn-primary edit"
                             data-toggle="tooltip" title="Edit">
                             <i class="fas fa-pen"></i></a>
-                        <!-- &nbsp;
-                        <a (click)= openDialog(customer.id) class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete">
-                            <i class="fas fa-trash"></i></a> -->
+                        &nbsp;
+                        <a (click)= openDialog(employee.employeeId) class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete">
+                            <i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
             </tbody>

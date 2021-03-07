@@ -1,7 +1,7 @@
 import { EmployeeService } from './../../../services/employee.service';
 import { FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-employee',
@@ -15,7 +15,8 @@ export class EditEmployeeComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     public employeeService: EmployeeService,
-    public activatedRoute: ActivatedRoute
+    public activatedRoute: ActivatedRoute,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,13 +26,15 @@ export class EditEmployeeComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(data => {
       this.employeeId = data.employeeId;
-      this.employeeService.getEmployeeById(this.employeeId).subscribe(haha => {
+      this.employeeService.getEmployeeById(this.employeeId).subscribe(data => {
         this.formEditEmployee.patchValue(data);
       })
     })
   }
 
   editEmployee() {
-    this.employeeService.editEmployee(this.formEditEmployee.value, this.employeeId).subscribe()
+    this.employeeService.editEmployee(this.formEditEmployee.value, this.employeeId).subscribe(data => {
+      this.router.navigateByUrl('employee');
+    })
   }
 }
